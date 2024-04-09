@@ -5,7 +5,6 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Document(collection = "rating")
 public class Rating {
-
     private @MongoId Long userId;
     private Long movieId;
     private Long rating;
