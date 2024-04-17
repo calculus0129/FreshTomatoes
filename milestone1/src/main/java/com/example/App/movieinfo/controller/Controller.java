@@ -1,7 +1,5 @@
 package com.example.App.movieinfo.controller;
 
-import com.example.App.movieinfo.model.Employee;
-import com.example.App.movieinfo.repository.EmployeeRepository;
 import com.example.App.movieinfo.repository.MovieRepository;
 import com.example.App.movieinfo.repository.RatingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import com.example.App.movieinfo.model.Rating;
 import com.example.App.movieinfo.model.Movie;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -34,12 +31,6 @@ public class Controller {
     MovieRepository movieRepository;
     @Autowired
     RatingRepository ratingRepository;
-
-    @Autowired
-    EmployeeRepository repository;
-
-    @Autowired
-    EmployeeModelAssembler assembler;
 
     // get movies with ratings higher or equal to given rating
     @GetMapping("/ratings/{r}")
@@ -111,57 +102,6 @@ public class Controller {
 
         EntityModel<Rating> entityModel = EntityModel.of(ratingRepository.save(newRating),
                 linkTo(methodOn(Controller.class).MovieNewRating(rating)).withSelfRel());
-
-        return ResponseEntity //
-                .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()) //
-                .body(entityModel);
-    }
-
-
-    @GetMapping("/employees")
-    CollectionModel<EntityModel<Employee>> all() {
-
-        List<EntityModel<Employee>> employees = repository.findAll().stream() //
-                .map(assembler::toModel) //
-                .collect(Collectors.toList());
-
-        return CollectionModel.of(employees, linkTo(methodOn(Controller.class).all()).withSelfRel());
-    }
-
-    @GetMapping("/employees/{id}")
-    EntityModel<Employee> one(@PathVariable Long id) {
-
-        Employee employee = repository.findById(id) //
-                .orElseThrow(() -> new EmployeeNotFoundException(id));
-
-        return assembler.toModel(employee);
-    }
-
-    @PostMapping("/employees")
-    ResponseEntity<?> newEmployee(@RequestBody Employee newEmployee) {
-
-        EntityModel<Employee> entityModel = assembler.toModel(repository.save(newEmployee));
-
-        return ResponseEntity //
-                .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()) //
-                .body(entityModel);
-    }
-
-    @PutMapping("/employees/{id}")
-    ResponseEntity<?> replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
-
-        Employee updatedEmployee = repository.findById(id) //
-                .map(employee -> {
-                    employee.setName(newEmployee.getName());
-                    employee.setRole(newEmployee.getRole());
-                    return repository.save(employee);
-                }) //
-                .orElseGet(() -> {
-                    newEmployee.setId(id);
-                    return repository.save(newEmployee);
-                });
-
-        EntityModel<Employee> entityModel = assembler.toModel(updatedEmployee);
 
         return ResponseEntity //
                 .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()) //
