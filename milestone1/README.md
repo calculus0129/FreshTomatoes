@@ -1,8 +1,11 @@
 
+```
 docker build -t ms1:cn .
 docker run -it --name cn_container ms1:cn
-
 docker exec -it cn_container bash
+```
+
+or alternatively, run `sh docker.sh`.
 
 For Employee data:
 1. GET request example:
@@ -15,9 +18,11 @@ curl -X POST http://localhost:8080/employees -H 'Content-type:application/json' 
 
 For Movie data:
 1. GET request example:
-curl -X GET http://localhost:8080/ratings/4
+   - `curl http://localhost:8080/movies`
+   - `curl http://localhost:8080/movies/1`
+   - `curl -X GET http://localhost:8080/ratings/4`
 2. PUT request example:
-curl -X PUT http://localhost:8080/users/3 -H 'Content-type:application/json' -d '{"movieId": "1", "rating": "5"}'
+   - curl -X PUT http://localhost:8080/users/3 -H 'Content-type:application/json' -d '{"movieId": "1", "rating": "5"}'
 3. POST request example:
 curl -X POST http://localhost:8080/users -H 'Content-type:application/json' -d '{"userId": "3", "movieId": "1", "rating": "5"}'
 
