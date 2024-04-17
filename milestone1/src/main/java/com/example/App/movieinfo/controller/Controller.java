@@ -60,6 +60,18 @@ public class Controller {
         return ResponseEntity.ok().body(movies);
     }
 
+    @GetMapping("movies")
+    public List<Movie> getAllMovies() {
+        return movieRepository.findAll();
+    }
+
+    @GetMapping("movies/{movieID}")
+    public ResponseEntity<Movie> getMovieByMovieID(@PathVariable Long movieID) {
+        return movieRepository.findByMovieId(movieID)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
     @PostMapping("/users")
     ResponseEntity<?> MovieNewRating(@RequestBody Rating rating) {
         Long r = rating.getRating();
