@@ -16,8 +16,7 @@ import java.util.Set;
 
 @Configuration
 public class LoadMongoDB {
-
-    private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
+    private static final Logger log = LoggerFactory.getLogger(LoadMongoDB.class);
     @Bean
     CommandLineRunner initMongoDB(MovieRepository movieRepository, RatingRepository ratingRepository) throws FileNotFoundException {
         return args -> {

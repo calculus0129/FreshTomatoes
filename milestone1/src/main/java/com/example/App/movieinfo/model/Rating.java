@@ -50,10 +50,4 @@ public class Rating {
         this.timestamp = timestamp;
     }
 
-    @Override
-    public String toString() {
-        return String.format(
-                "Rating[userid=%s, movieid=%s, rating=%d, timestamp=%d]",
-                userId, movieId, rating, timestamp);
-    }
 }

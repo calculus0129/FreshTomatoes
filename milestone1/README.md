@@ -7,13 +7,19 @@ docker exec -it cn_container bash
 
 or alternatively, run `sh docker.sh`.
 
-For Employee data:
-1. GET request example:
-curl -X GET http://localhost:8080/employees
-2. PUT request example:
-curl -X PUT http://localhost:8080/employees/3 -H 'Content-type:application/json' -d '{"name": "Samwise Gamgee", "role": "ring bearer"}'
-3. POST request example:
-curl -X POST http://localhost:8080/employees -H 'Content-type:application/json' -d '{"name": "Samwise Gamgee", "role": "gardener"}'
+[//]: # (For Employee data:)
+
+[//]: # (1. GET request example:)
+
+[//]: # (curl -X GET http://localhost:8080/employees)
+
+[//]: # (2. PUT request example:)
+
+[//]: # (curl -X PUT http://localhost:8080/employees/3 -H 'Content-type:application/json' -d '{"name": "Samwise Gamgee", "role": "ring bearer"}')
+
+[//]: # (3. POST request example:)
+
+[//]: # (curl -X POST http://localhost:8080/employees -H 'Content-type:application/json' -d '{"name": "Samwise Gamgee", "role": "gardener"}')
 
 
 For Movie data:
