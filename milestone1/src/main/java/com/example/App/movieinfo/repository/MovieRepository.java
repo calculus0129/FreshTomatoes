@@ -9,6 +9,7 @@ import java.util.Optional;
 
 
 @Repository
-public interface MovieRepository extends MongoRepository<Movie, Long> {
+public interface MovieRepository extends MongoRepository<Movie, String> {
     Optional<Movie> findByMovieId(Long movieId); // This method allows you to fetch a movie by its movieID.
+    void deleteByMovieId(Long movieId);
 }
