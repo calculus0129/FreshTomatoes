@@ -1,42 +1,36 @@
 package com.example.App.movieinfo.controller;
 
-import com.example.App.movieinfo.repository.MovieRepository;
-import com.example.App.movieinfo.repository.RatingRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.hateoas.CollectionModel;
-import org.springframework.hateoas.EntityModel;
-import org.springframework.hateoas.IanaLinkRelations;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+//import com.example.App.movieinfo.repository.MovieRepository;
+//import com.example.App.movieinfo.repository.RatingRepository;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.data.mongodb.core.MongoTemplate;
+//import org.springframework.hateoas.CollectionModel;
+//import org.springframework.hateoas.EntityModel;
+//import org.springframework.hateoas.IanaLinkRelations;
+//import org.springframework.http.ResponseEntity;
+//import org.springframework.web.bind.annotation.*;
 
-import com.example.App.movieinfo.model.Rating;
-import com.example.App.movieinfo.model.Movie;
+//import com.example.App.movieinfo.model.Rating;
+//import com.example.App.movieinfo.model.Movie;
+//
+//import java.util.List;
+//import java.util.stream.Collectors;
+//
+//import static org.springframework.data.mongodb.core.query.Query.query;
+//import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+//import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+//import static org.springframework.data.mongodb.core.query.Criteria.where;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static org.springframework.data.mongodb.core.query.Query.query;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
-import static org.springframework.data.mongodb.core.query.Criteria.where;
-
-@RestController
+//@RestController
 public class Controller {
 
-    @Autowired
-    MongoTemplate template;
-
-    @Autowired
-    MovieRepository movieRepository;
-    @Autowired
-    RatingRepository ratingRepository;
-
-
-    @GetMapping("ratings")
-    public List<Rating> getAllRatings() {
-        return ratingRepository.findAll();
-    }
+//    @Autowired
+//    MongoTemplate template;
+//
+//    @Autowired
+//    MovieRepository movieRepository;
+//    @Autowired
+//    RatingRepository ratingRepository;
 
     // get movies with ratings higher or equal to given rating
 //    @GetMapping("/ratings/{r}")
@@ -57,19 +51,7 @@ public class Controller {
 //        return ResponseEntity.ok().body(movies);
 //    }
 
-    @GetMapping("movies")
-    public List<Movie> getAllMovies() {
-        return movieRepository.findAll();
-    }
-
-    @GetMapping("movies/{movieID}")
-    public ResponseEntity<Movie> getMovieByMovieID(@PathVariable Long movieID) {
-        return movieRepository.findByMovieId(movieID)
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
-//    @PostMapping("/users")
+//    @PostMapping("/users") // curl -X POST http://localhost:8080/users -H 'Content-type:application/json' -d '{"userId": "3", "movieId": "1", "rating": "5"}'
 //    ResponseEntity<?> MovieNewRating(@RequestBody Rating rating) {
 //        Long r = rating.getRating();
 //        Long id = rating.getUserId();
@@ -93,7 +75,7 @@ public class Controller {
 //                .body(entityModel);
 //    }
 //
-//    @PutMapping("/users/{x}")
+//    @PutMapping("/users/{x}") // curl -X PUT http://localhost:8080/users/3 -H 'Content-type:application/json' -d '{"movieId": "1", "rating": "5"}'
 //    ResponseEntity<?> replaceEmployee(@RequestBody Rating rating, @PathVariable Long x) {
 //        Long r = rating.getRating();
 //        Long id = x;

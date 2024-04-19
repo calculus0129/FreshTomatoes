@@ -10,9 +10,9 @@ import java.util.Set;
 
 @Document(collection = "movie")
 public class Movie { // Spring data mongodb maps the Movie class into a collection called "movie"
-
-    @JsonIgnore
-    private @Id Long movieId; // mostly for internal use by db
+    @Id
+    private String id; // MongoDB's default ID type is String. This Id is for auto-generation. So it should not be a Long type.
+    private Long movieId; // mostly for internal use by db
     private String title;
     private Set<String> genres;
 
@@ -21,6 +21,10 @@ public class Movie { // Spring data mongodb maps the Movie class into a collecti
         this.movieId = movieId;
         this.title = title;
         this.genres = genres;
+    }
+
+    public String getId() {
+        return this.id;
     }
     public Long getMovieId() {
         return this.movieId;
@@ -31,7 +35,10 @@ public class Movie { // Spring data mongodb maps the Movie class into a collecti
     public Set<String> getGenres() {
         return this.genres;
     }
-    
+
+    public void setId(String id) {
+        this.id = id;
+    }
     public void setMovieId(Long movieId) {
         this.movieId = movieId;
     }
@@ -47,22 +54,24 @@ public class Movie { // Spring data mongodb maps the Movie class into a collecti
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Movie movie = (Movie) o;
-        return Objects.equals(movieId, movie.movieId)
+        return Objects.equals(id, movie.id)
+                && Objects.equals(movieId, movie.movieId)
                 && Objects.equals(title, movie.title)
                 && Objects.equals(genres, movie.genres);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(movieId, title, genres);
+        return Objects.hash(id, movieId, title, genres);
     }
 
     @Override
     public String toString() {
-        return "Movie[+" +
-                "id=" + movieId +
+        return "Movie{" +
+                "id=" + id +
+                ", movieID=" + movieId +
                 ", title='" + title + '\'' +
                 ", genres=" + genres +
-                "]";
+                '}';
     }
 }
