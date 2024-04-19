@@ -32,6 +32,12 @@ public class Controller {
     @Autowired
     RatingRepository ratingRepository;
 
+
+    @GetMapping("ratings")
+    public List<Rating> getAllRatings() {
+        return ratingRepository.findAll();
+    }
+
     // get movies with ratings higher or equal to given rating
     @GetMapping("/ratings/{r}")
     ResponseEntity<List<Movie>> MovieWithRating(@PathVariable Long r) {
