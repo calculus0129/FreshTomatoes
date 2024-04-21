@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ko"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MovieController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Payroll</a> &gt; <a href="index.source.html" class="el_package">com.example.App.movieinfo.controller</a> &gt; <span class="el_source">MovieController.java</span></div><h1>MovieController.java</h1><pre class="source lang-java linenums">package com.example.App.movieinfo.controller;
+
+import com.example.App.movieinfo.model.Movie;
+import com.example.App.movieinfo.model.Rating;
+import com.example.App.movieinfo.repository.MovieRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
+import static org.springframework.data.mongodb.core.query.Criteria.where;
+import static org.springframework.data.mongodb.core.query.Query.query;
+
+@RestController
+@RequestMapping(&quot;/movies&quot;)
+public class MovieController {
+
+    @Autowired
+    MongoTemplate template;
+
+    private final MovieRepository movieRepository;
+
+    @Autowired
+<span class="nc" id="L29">    public MovieController(MovieRepository movieRepository) {</span>
+<span class="nc" id="L30">        this.movieRepository = movieRepository;</span>
+<span class="nc" id="L31">    }</span>
+
+    @GetMapping
+    public List&lt;Movie&gt; getAllMovies() {
+<span class="nc" id="L35">        return movieRepository.findAll();</span>
+    }
+
+//    @GetMapping(&quot;/averageRating/{rating}&quot;)
+//    public ResponseEntity&lt;List&lt;MovieAverageRating&gt;&gt; getMoviesByAverageRating(@PathVariable double rating) {
+//        List&lt;MovieAverageRating&gt; movies = movieService.findMoviesWithAverageRatingAbove(rating);
+//        if (movies.isEmpty()) {
+//            return ResponseEntity.noContent().build();
+//        }
+//        return ResponseEntity.ok(movies);
+//    }
+
+//    @GetMapping(&quot;/{id}&quot;)
+//    public Movie getMovieById(@PathVariable String id) {
+//        return movieRepository.findById(id).orElse(null);
+//    }
+
+    // get movies with ratings higher or equal to given rating.
+    // Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'r' for method parameter type Long is not present]
+    @GetMapping(&quot;/averageRating/{r}&quot;)
+    public ResponseEntity&lt;?&gt; getMoviesByAverageRating(@PathVariable Long r) {
+<span class="nc bnc" id="L56" title="All 4 branches missed.">        if(r &lt; 1L || r &gt; 5L) return ResponseEntity.badRequest().body(&quot;You should input integer rating from 1 to 5.&quot;);</span>
+
+<span class="nc" id="L58">        List&lt;Long&gt; movieIds = template.query(Rating.class).distinct(&quot;movieId&quot;).as(Long.class).all();</span>
+<span class="nc" id="L59">        List&lt;Long&gt; resMovieIds = movieIds.stream()</span>
+<span class="nc" id="L60">                .filter(a -&gt; template.query(Rating.class).matching(query(where(&quot;movieId&quot;).is(a))).all()</span>
+<span class="nc" id="L61">                        .stream()</span>
+<span class="nc" id="L62">                        .mapToLong(Rating::getRating)</span>
+<span class="nc bnc" id="L63" title="All 2 branches missed.">                        .average().orElse(0) &gt;= r)</span>
+<span class="nc" id="L64">                .collect(Collectors.toList());</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">        if (resMovieIds.isEmpty()) return ResponseEntity.ok(&quot;There are no such movies.&quot;); // throw new MovieNotFoundException(r);</span>
+<span class="nc" id="L66">        List&lt;Movie&gt; movies = template.query(Movie.class).matching(query(where(&quot;movieId&quot;).in(resMovieIds))).all();</span>
+<span class="nc bnc" id="L67" title="All 2 branches missed.">        if (movies.isEmpty()) return ResponseEntity.ok(&quot;There are no such movies.&quot;); // throw new MovieNotFoundException(r);</span>
+
+<span class="nc" id="L69">        return ResponseEntity.ok().body(movies);</span>
+    }
+
+    @GetMapping(&quot;/{movieID}&quot;)
+    public ResponseEntity&lt;Movie&gt; getMovieByMovieId(@PathVariable Long movieID) {
+<span class="nc" id="L74">        return movieRepository.findByMovieId(movieID)</span>
+<span class="nc" id="L75">                .map(ResponseEntity::ok)</span>
+<span class="nc" id="L76">                .orElseGet(() -&gt; ResponseEntity.notFound().build());</span>
+    }
+
+    // The return type allows us to return both the status code and the body depending on the situation.
+    @PostMapping
+    public ResponseEntity&lt;?&gt; createMovie(@RequestBody Movie movie) {
+<span class="nc bnc" id="L82" title="All 2 branches missed.">        if (movieRepository.findByMovieId(movie.getMovieId()).isPresent()) {</span>
+            // Return 409 Conflict when the movie already exists
+<span class="nc" id="L84">            String errorMessage = &quot;A movie with such a movieID already exists in the movie repository!&quot;;</span>
+<span class="nc" id="L85">            return ResponseEntity.status(HttpStatus.CONFLICT).body(errorMessage);</span>
+        }
+<span class="nc" id="L87">        Movie savedMovie = movieRepository.save(movie);</span>
+        // Return 201 Created and the saved movie
+<span class="nc" id="L89">        return ResponseEntity.status(HttpStatus.CREATED).body(savedMovie);</span>
+    }
+
+    @PutMapping(&quot;/{movieID}&quot;)
+    public ResponseEntity&lt;?&gt; updateMovie(@PathVariable Long movieID, @RequestBody Movie updatedMovie) {
+<span class="nc bnc" id="L94" title="All 2 branches missed.">        if(!Objects.equals(movieID, updatedMovie.getMovieId())) {</span>
+<span class="nc" id="L95">            String errorMessage = String.format(&quot;The provided movieId: %d is not equal to the movieId: %d of the movie information!&quot;, movieID, updatedMovie.getMovieId());</span>
+<span class="nc" id="L96">            return ResponseEntity.status(HttpStatus.CONFLICT).body(errorMessage);</span>
+        }
+<span class="nc" id="L98">        return movieRepository.findByMovieId(movieID)</span>
+<span class="nc" id="L99">                .map(movie -&gt; {</span>
+<span class="nc" id="L100">                    movie.setTitle(updatedMovie.getTitle());</span>
+<span class="nc" id="L101">                    movie.setGenres(updatedMovie.getGenres());</span>
+<span class="nc" id="L102">                    Movie savedMovie = movieRepository.save(movie);</span>
+<span class="nc" id="L103">                    return ResponseEntity.ok(savedMovie);</span>
+                })
+<span class="nc" id="L105">                .orElseGet(() -&gt; ResponseEntity.notFound().build());</span>
+    }
+
+    @DeleteMapping(&quot;/{movieId}&quot;)
+    ResponseEntity&lt;?&gt; deleteMovie(@PathVariable Long movieId) {
+<span class="nc" id="L110">        movieRepository.deleteByMovieId(movieId);</span>
+<span class="nc" id="L111">        return ResponseEntity.noContent().build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
