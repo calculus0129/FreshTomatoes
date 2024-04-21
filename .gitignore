@@ -14,3 +14,10 @@
 !/*.iml
 
 # ! .gitignore for IntelliJ users
+
+# Jacoco coverage reports
+jacoco.exec
+jacoco/
+target/jacoco.exec
+target/jacoco/
+target/site/jacoco/
