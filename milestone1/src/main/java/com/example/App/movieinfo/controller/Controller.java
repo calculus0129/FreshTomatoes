@@ -51,6 +51,7 @@ public class Controller {
 //        return ResponseEntity.ok().body(movies);
 //    }
 
+    // users/ user가 userid, movieid, rating => current time => rating post
 //    @PostMapping("/users") // curl -X POST http://localhost:8080/users -H 'Content-type:application/json' -d '{"userId": "3", "movieId": "1", "rating": "5"}'
 //    ResponseEntity<?> MovieNewRating(@RequestBody Rating rating) {
 //        Long r = rating.getRating();
@@ -74,7 +75,7 @@ public class Controller {
 //                .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()) //
 //                .body(entityModel);
 //    }
-//
+    // rating 수정 => 해당 userId와 시간 ㅇㅇ
 //    @PutMapping("/users/{x}") // curl -X PUT http://localhost:8080/users/3 -H 'Content-type:application/json' -d '{"movieId": "1", "rating": "5"}'
 //    ResponseEntity<?> replaceEmployee(@RequestBody Rating rating, @PathVariable Long x) {
 //        Long r = rating.getRating();
