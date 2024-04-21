@@ -53,7 +53,7 @@ public class MovieController {
     // Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'r' for method parameter type Long is not present]
     @GetMapping("/averageRating/{r}")
     public ResponseEntity<?> getMoviesByAverageRating(@PathVariable Long r) {
-        if(r < 1L || r > 5L) return ResponseEntity.badRequest().body("You should input integer rating from 1 to 5.");
+        if(r < 1 || r > 5) return ResponseEntity.badRequest().body("You should input integer rating from 1 to 5.");
 
         List<Long> movieIds = template.query(Rating.class).distinct("movieId").as(Long.class).all();
         List<Long> resMovieIds = movieIds.stream()

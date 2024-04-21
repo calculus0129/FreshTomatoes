@@ -116,4 +116,5 @@ public class LoadMongoDB implements CommandLineRunner {
             log.error("Error preloading ratings: {}", e.getMessage());
         }
     }
+
 }
