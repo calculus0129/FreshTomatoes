@@ -2,6 +2,7 @@ package com.example.App.movieinfo.repository;
 
 import com.example.App.movieinfo.model.Movie;
 import com.example.App.movieinfo.model.Rating;
+import com.example.App.movieinfo.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,12 +33,14 @@ public class LoadMongoDB implements CommandLineRunner {
 
     private final MovieRepository movieRepository;
     private final RatingRepository ratingRepository;
+    private final UserRepository userrepository;
     private static final Logger log = LoggerFactory.getLogger(LoadMongoDB.class);
 
     @Autowired
-    public LoadMongoDB(MovieRepository movieRepository, RatingRepository ratingRepository) {
+    public LoadMongoDB(MovieRepository movieRepository, RatingRepository ratingRepository, UserRepository userRepository) {
         this.movieRepository = movieRepository;
         this.ratingRepository = ratingRepository;
+        this.userrepository = userRepository;
     }
 //    @Bean
 //    CommandLineRunner initMongoDB(MovieRepository movieRepository, RatingRepository ratingRepository) throws FileNotFoundException {
@@ -75,6 +78,9 @@ public class LoadMongoDB implements CommandLineRunner {
         log.info("Preloading rating data...");
         loadRatings();
         log.info("Rating data all uploaded!");
+        log.info("Preloading User data...");
+        loadUsers();
+        log.info("User data all uploaded!");
     }
 
 
@@ -114,6 +120,25 @@ public class LoadMongoDB implements CommandLineRunner {
             ratingRepository.saveAll(ratings);
         } catch (Exception e) {
             log.error("Error preloading ratings: {}", e.getMessage());
+        }
+    }
+
+    private void loadUsers() throws Exception {
+        try (var br = new BufferedReader(new FileReader("data/users.dat"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                var parts = line.trim().split("::");
+                if (parts.length >= 5) {
+                    long userID = Long.parseLong(parts[0]);
+                    String gender= parts[1];
+                    long age = Long.parseLong(parts[2]);
+                    long occupation = Long.parseLong(parts[3]);
+                    User user = new User(userID, gender, age, occupation);
+                    userrepository.save(user);
+                }
+            }
+        } catch (Exception e) {
+            log.error("Error preloading movies: {}", e.getMessage());
         }
     }
 }
