@@ -12,6 +12,34 @@ public class User {
     private Long age;
     private Long occupation;
 
+    // returns true iff the gender string is 'valid'.
+    public static boolean genderChecker(String g) {
+        return g.equals("F") || g.equals("M");
+    }
+
+    /*
+     *  1:  "Under 18"
+     * 18:  "18-24"
+     * 25:  "25-34"
+     * 35:  "35-44"
+     * 45:  "45-49"
+     * 50:  "50-55"
+     * 56:  "56+"
+     */
+    public static long ageMapper(Long age) {
+        if(age<18L) return 1L;
+        if(age<25L) return 18L;
+        if(age<35L) return 25L;
+        if(age<45L) return 35L;
+        if(age<50L) return 45L;
+        if(age<56L) return 50L;
+        return 56L;
+    }
+
+    public static boolean occChecker(Long occ) {
+        return occ>=0L && occ<=20L;
+    }
+
     public User(Long userId, String gender, Long age, Long occupation) {
         this.userId = userId;
         this.gender = gender;
