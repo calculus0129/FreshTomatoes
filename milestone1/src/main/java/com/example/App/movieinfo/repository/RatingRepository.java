@@ -22,6 +22,7 @@ public interface RatingRepository extends MongoRepository<Rating, String> {
     List<Rating> findByMovieId(Long movieId);
     // Spring Data will handle the Pageable parameter and generate the necessary query to fetch only the specified number of results.
     List<Rating> findByMovieId(Long movieId, Pageable pageable);
+    List<Rating> findByUserId(Long userId);
 
     // Add a method to fetch ratings with a limit
 //    @Query(value = "{ 'movieId' : ?0 }")
