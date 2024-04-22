@@ -21,3 +21,5 @@ jacoco/
 target/jacoco.exec
 target/jacoco/
 target/site/jacoco/
+
+target/

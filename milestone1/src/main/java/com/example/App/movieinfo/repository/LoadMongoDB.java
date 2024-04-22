@@ -33,45 +33,19 @@ public class LoadMongoDB implements CommandLineRunner {
 
     private final MovieRepository movieRepository;
     private final RatingRepository ratingRepository;
-    private final UserRepository userrepository;
+    private final UserRepository userRepository;
     private static final Logger log = LoggerFactory.getLogger(LoadMongoDB.class);
 
     @Autowired
     public LoadMongoDB(MovieRepository movieRepository, RatingRepository ratingRepository, UserRepository userRepository) {
         this.movieRepository = movieRepository;
         this.ratingRepository = ratingRepository;
-        this.userrepository = userRepository;
+        this.userRepository = userRepository;
     }
-//    @Bean
-//    CommandLineRunner initMongoDB(MovieRepository movieRepository, RatingRepository ratingRepository) throws FileNotFoundException {
-//        return args -> {
-//            BufferedReader movieReader = new BufferedReader(new FileReader("data/movies.dat"));
-//            String temp;
-//            log.info("Preloading Movie data...");
-//            while ((temp = movieReader.readLine()) != null) {
-//                String[] movie = temp.trim().split("::");
-//                if(movie.length>=3) {
-//                    movieRepository.save(new Movie(Long.parseLong(movie[0]), movie[1], new HashSet<>(Set.of(movie[2].split("\\|")))));
-//                }
-//            }
-//            log.info("Movie data all uploaded!");
-//            movieReader.close();
-//
-//            BufferedReader ratingReader = new BufferedReader(new FileReader("data/ratings.dat"));
-//            log.info("Preloading rating data...");
-//            while ((temp = ratingReader.readLine()) != null) {
-//                String[] rating = temp.trim().split("::");
-//                if(rating.length>=4) {
-//                    ratingRepository.save(new Rating(Long.parseLong(rating[0]), Long.parseLong(rating[1]), Long.parseLong(rating[2]), Long.parseLong(rating[3])));
-//                }
-//            }
-//            log.info("Rating data all uploaded!");
-//            ratingReader.close();
-//        };
-//    }
 
     @Override
     public void run(String... args) throws Exception {
+        clearData();
         log.info("Preloading Movie data...");
         loadMovies();
         log.info("Movie data all uploaded!");
@@ -83,6 +57,13 @@ public class LoadMongoDB implements CommandLineRunner {
         log.info("User data all uploaded!");
     }
 
+    private void clearData() {
+        log.info("Clearing previous data from collections...");
+        movieRepository.deleteAll();
+        ratingRepository.deleteAll();
+        userRepository.deleteAll();
+        log.info("Cleared!");
+    }
 
     private void loadMovies() throws Exception {
         try (var br = new BufferedReader(new FileReader("data/movies.dat"))) {
@@ -101,6 +82,11 @@ public class LoadMongoDB implements CommandLineRunner {
         } catch (Exception e) {
             log.error("Error preloading movies: {}", e.getMessage());
         }
+//        // for test
+//        if (movieRepository.findByMovieId(1L).isEmpty()) {
+//            log.error("Failed to find movie with ID 1");
+//            throw new RuntimeException("Could not find Movie with ID 1");
+//        }
     }
 
     private void loadRatings() throws Exception {
@@ -124,21 +110,15 @@ public class LoadMongoDB implements CommandLineRunner {
     }
 
     private void loadUsers() throws Exception {
-        try (var br = new BufferedReader(new FileReader("data/users.dat"))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                var parts = line.trim().split("::");
-                if (parts.length >= 5) {
-                    long userID = Long.parseLong(parts[0]);
-                    String gender= parts[1];
-                    long age = Long.parseLong(parts[2]);
-                    long occupation = Long.parseLong(parts[3]);
-                    User user = new User(userID, gender, age, occupation);
-                    userrepository.save(user);
-                }
-            }
+        Path filePath = Paths.get("data/users.dat");
+        try (Stream<String> lines = Files.lines(filePath, StandardCharsets.UTF_8)) {
+            List<User> users = lines.map(line -> line.split("::"))
+                    .filter(parts -> parts.length >= 5)
+                    .map(parts -> new User(Long.parseLong(parts[0]), parts[1], Long.parseLong(parts[2]), Long.parseLong(parts[3])))
+                    .collect(Collectors.toList());
+            userRepository.saveAll(users);
         } catch (Exception e) {
-            log.error("Error preloading movies: {}", e.getMessage());
+            log.error("Error preloading users: {}", e.getMessage());
         }
     }
 }
