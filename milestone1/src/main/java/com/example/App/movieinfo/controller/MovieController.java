@@ -30,6 +30,7 @@ public class MovieController {
         this.movieRepository = movieRepository;
     }
 
+    // API 하나
     @GetMapping
     public List<Movie> getAllMovies() {
         return movieRepository.findAll();
