@@ -11,5 +11,6 @@ import java.util.List;
 @Repository
 public interface UserRepository extends MongoRepository<User, String> {
     List<User> findByUserId(Long userId); // This method allows you to fetch a movie by its movieID.
+    List<User> findByGenderAndAgeAndOccupation(String gender, Long age, Long occupation);
     //void deleteByMovieId(Long movieId);
 }
