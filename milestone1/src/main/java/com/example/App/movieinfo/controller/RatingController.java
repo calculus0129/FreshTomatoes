@@ -2,7 +2,10 @@ package com.example.App.movieinfo.controller;
 
 import com.example.App.movieinfo.model.Movie;
 import com.example.App.movieinfo.model.Rating;
+import com.example.App.movieinfo.model.User;
+import com.example.App.movieinfo.repository.MovieRepository;
 import com.example.App.movieinfo.repository.RatingRepository;
+import com.example.App.movieinfo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -19,33 +22,37 @@ import java.util.stream.Collectors;
 public class RatingController {
 
     private final RatingRepository ratingRepository;
+    private final UserRepository userRepository;
+    private final MovieRepository movieRepository;
 
     @Autowired
-    public RatingController(RatingRepository ratingRepository) {
+    public RatingController(RatingRepository ratingRepository, UserRepository userRepository, MovieRepository movieRepository) {
         this.ratingRepository = ratingRepository;
+        this.userRepository = userRepository;
+        this.movieRepository = movieRepository;
     }
 
     // Get all ratings with optional max parameter
     // curl http://localhost:8080/ratings?max=10
     // calling curl http://localhost:8080/ratings may result in command line buffer issue with lags.
     @GetMapping
-    public List<Rating> getAllRatings(@RequestParam(value = "max", required = false) Integer max) {
+    public ResponseEntity<List<Rating>> getAllRatings(@RequestParam(value = "max", required = false) Integer max) {
         List<Rating> allRatings = ratingRepository.findAll();
-        return max != null ? allRatings.stream().limit(max).collect(Collectors.toList()) : allRatings;
+        return ResponseEntity.status(HttpStatus.OK).body(max != null ? allRatings.stream().limit(max).collect(Collectors.toList()) : allRatings);
     }
 
     // Get ratings for a specific movie using a query parameter with optional max parameter
     // curl "http://localhost:8080/ratings?movieId=1&max=5"
     @GetMapping(params = "movieId")
-    public List<Rating> getRatingsByMovieId(@RequestParam("movieId") Long movieId,
+    public ResponseEntity<List<Rating>> getRatingsByMovieId(@RequestParam("movieId") Long movieId,
                                             @RequestParam(value = "max", required = false) Integer max) {
         // If max is not null and greater than 0, apply the PageRequest with max as the page size
         if (max != null && max > 0) {
             Pageable pageable = PageRequest.of(0, max);
-            return ratingRepository.findByMovieId(movieId, pageable);
+            return ResponseEntity.ok(ratingRepository.findByMovieId(movieId, pageable));
         } else {
             // Else, return all ratings without pagination
-            return ratingRepository.findByMovieId(movieId);
+            return ResponseEntity.ok(ratingRepository.findByMovieId(movieId));
         }
     }
 
@@ -70,6 +77,17 @@ public class RatingController {
     public ResponseEntity<?> updateRating(@RequestParam("userId") Long userId,
                                           @RequestParam("movieId") Long movieId,
                                           @RequestBody Rating updatedRating) {
+        // Check if the user and movie are present.
+        Optional<Movie> movieOptional = movieRepository.findByMovieId(movieId);
+        Optional<User> userOptional = userRepository.findByUserId(userId);
+        if(movieOptional.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Movie not found for movieId " + movieId);
+        }
+        if(userOptional.isEmpty()) {
+            // No rating found, return 404 Not Found
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found for userId " + userId);
+        }
+
         // Check if the existing rating is present
         Optional<Rating> existingRatingOptional = ratingRepository.findByUserIdAndMovieId(userId, movieId);
         if (!existingRatingOptional.isPresent()) {
