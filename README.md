@@ -51,6 +51,12 @@ For Rating data:
    - `curl -X DELETE "http://localhost:8080/ratings?userId=7000&movieId=1"`
 
 
+To test,
+
+run `sh test.sh` locally.\
+Then you can locate from the file
+`projects-group3/milestone1/target/site/jacoco/index.html`
+to see the branch coverage.
 
 
 -rating input  bigger than 5 or less than 1 returns error
