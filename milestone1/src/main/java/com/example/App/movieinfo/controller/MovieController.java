@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static org.springframework.data.mongodb.core.query.Criteria.where;
@@ -35,41 +36,6 @@ public class MovieController {
     public List<Movie> getAllMovies() {
         return movieRepository.findAll();
     }
-
-//    @GetMapping("/averageRating/{rating}")
-//    public ResponseEntity<List<MovieAverageRating>> getMoviesByAverageRating(@PathVariable double rating) {
-//        List<MovieAverageRating> movies = movieService.findMoviesWithAverageRatingAbove(rating);
-//        if (movies.isEmpty()) {
-//            return ResponseEntity.noContent().build();
-//        }
-//        return ResponseEntity.ok(movies);
-//    }
-
-//    @GetMapping("/{id}")
-//    public Movie getMovieById(@PathVariable String id) {
-//        return movieRepository.findById(id).orElse(null);
-//    }
-
-    // get movies with ratings higher or equal to given rating.
-    // Temporal error that it does not run...
-    // Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'r' for method parameter type Long is not present]
-//    @GetMapping("/averageRating/{r}")
-//    public ResponseEntity<?> getMoviesByAverageRating(@PathVariable Long r) {
-//        if(r < 1L || r > 5L) return ResponseEntity.badRequest().body("You should input integer rating from 1 to 5.");
-//
-//        List<Long> movieIds = template.query(Rating.class).distinct("movieId").as(Long.class).all();
-//        List<Long> resMovieIds = movieIds.stream()
-//                .filter(a -> template.query(Rating.class).matching(query(where("movieId").is(a))).all()
-//                        .stream()
-//                        .mapToLong(Rating::getRating)
-//                        .average().orElse(0) >= r)
-//                .collect(Collectors.toList());
-//        if (resMovieIds.isEmpty()) return ResponseEntity.ok("There are no such movies."); // throw new MovieNotFoundException(r);
-//        List<Movie> movies = template.query(Movie.class).matching(query(where("movieId").in(resMovieIds))).all();
-//        if (movies.isEmpty()) return ResponseEntity.ok("There are no such movies."); // throw new MovieNotFoundException(r);
-//
-//        return ResponseEntity.ok().body(movies);
-//    }
 
     @GetMapping("/{movieID}")
     public ResponseEntity<Movie> getMovieByMovieId(@PathVariable Long movieID) {
@@ -109,7 +75,13 @@ public class MovieController {
 
     @DeleteMapping("/{movieId}")
     ResponseEntity<?> deleteMovie(@PathVariable Long movieId) {
+        Optional<Movie> movieOptional = movieRepository.findByMovieId(movieId);
+        if(movieOptional.isEmpty()) {
+            // No rating found, return 404 Not Found
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Movie not found for movieId " + movieId);
+        }
         movieRepository.deleteByMovieId(movieId);
-        return ResponseEntity.noContent().build();
+        // Return 200 OK if deletion is successful
+        return ResponseEntity.ok().body("Movie successfully deleted for movieId " + movieId);
     }
 }

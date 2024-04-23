@@ -1,8 +1,11 @@
 package com.example.App.movieinfo.controller;
 
 import com.example.App.movieinfo.model.*;
+import com.example.App.movieinfo.repository.LoadMongoDB;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +26,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, properties = "spring.profiles.active=test")
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)  // Allows non-static @BeforeAll
 class RecControllerTest {
 
     private static final Logger logger = LoggerFactory.getLogger(RecControllerTest.class);
@@ -32,6 +36,15 @@ class RecControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
+
+    @Autowired
+    private LoadMongoDB loadMongoDB;  // Spring injects the LoadMongoDB bean
+
+    @BeforeAll
+    public void setUpClass() throws Exception {
+        // This will clear existing data and load test data
+        loadMongoDB.run();  // Assuming this method can be called directly like this
+    }
 
     @Test
     public void testRecByUserValid() throws Exception {

@@ -23,7 +23,6 @@ For Movie data:
 1. GET request example:
    - `curl http://localhost:8080/movies` (Search all movies)
    - `curl http://localhost:8080/movies/1` (Search movies with a movieID)
-   - `curl http://localhost:8080/movies/averageRating/4` (Search all movies greater than or equal to a given average Rating of [1,5]) (or `curl -X GET http://localhost:8080/movies/averageRating/4`)
 2. PUT request example:
    - `curl -X PUT http://localhost:8080/movies/1 -H 'Content-type:application/json' -d '{"movieId":1, "title":"Ricochet Love", "genres":["Romance","Fantasy"]}'`
 3. POST request example:
