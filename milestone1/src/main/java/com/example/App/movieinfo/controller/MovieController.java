@@ -51,24 +51,25 @@ public class MovieController {
 //    }
 
     // get movies with ratings higher or equal to given rating.
+    // Temporal error that it does not run...
     // Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'r' for method parameter type Long is not present]
-    @GetMapping("/averageRating/{r}")
-    public ResponseEntity<?> getMoviesByAverageRating(@PathVariable Long r) {
-        if(r < 1L || r > 5L) return ResponseEntity.badRequest().body("You should input integer rating from 1 to 5.");
-
-        List<Long> movieIds = template.query(Rating.class).distinct("movieId").as(Long.class).all();
-        List<Long> resMovieIds = movieIds.stream()
-                .filter(a -> template.query(Rating.class).matching(query(where("movieId").is(a))).all()
-                        .stream()
-                        .mapToLong(Rating::getRating)
-                        .average().orElse(0) >= r)
-                .collect(Collectors.toList());
-        if (resMovieIds.isEmpty()) return ResponseEntity.ok("There are no such movies."); // throw new MovieNotFoundException(r);
-        List<Movie> movies = template.query(Movie.class).matching(query(where("movieId").in(resMovieIds))).all();
-        if (movies.isEmpty()) return ResponseEntity.ok("There are no such movies."); // throw new MovieNotFoundException(r);
-
-        return ResponseEntity.ok().body(movies);
-    }
+//    @GetMapping("/averageRating/{r}")
+//    public ResponseEntity<?> getMoviesByAverageRating(@PathVariable Long r) {
+//        if(r < 1L || r > 5L) return ResponseEntity.badRequest().body("You should input integer rating from 1 to 5.");
+//
+//        List<Long> movieIds = template.query(Rating.class).distinct("movieId").as(Long.class).all();
+//        List<Long> resMovieIds = movieIds.stream()
+//                .filter(a -> template.query(Rating.class).matching(query(where("movieId").is(a))).all()
+//                        .stream()
+//                        .mapToLong(Rating::getRating)
+//                        .average().orElse(0) >= r)
+//                .collect(Collectors.toList());
+//        if (resMovieIds.isEmpty()) return ResponseEntity.ok("There are no such movies."); // throw new MovieNotFoundException(r);
+//        List<Movie> movies = template.query(Movie.class).matching(query(where("movieId").in(resMovieIds))).all();
+//        if (movies.isEmpty()) return ResponseEntity.ok("There are no such movies."); // throw new MovieNotFoundException(r);
+//
+//        return ResponseEntity.ok().body(movies);
+//    }
 
     @GetMapping("/{movieID}")
     public ResponseEntity<Movie> getMovieByMovieId(@PathVariable Long movieID) {
