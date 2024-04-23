@@ -14,8 +14,8 @@
     <groupId>unist</groupId>
     <artifactId>cse364-project</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Payroll</name>
-    <description>Demo project for Spring Boot</description>
+    <name>FreshTomatoes</name>
+    <description>A web application with movie data</description>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
