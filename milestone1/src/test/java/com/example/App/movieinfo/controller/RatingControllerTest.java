@@ -208,12 +208,76 @@ class RatingControllerTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
+    // curl -X POST "http://localhost:8080/ratings" -H "Content-Type: application/json" -d '{"userId":7001, "movieId":1, "rating": 5, "timestamp": 922222222}'
     @Test
     void createRating0() {
+        // JSON payload as a String
+        String jsonPayload = "{\"userId\":7001, \"movieId\":1, \"rating\": 5, \"timestamp\":922222222}";
 
+        // Set headers
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        // Build the request
+        HttpEntity<String> request = new HttpEntity<>(jsonPayload, headers);
+        ResponseEntity<Rating> response = restTemplate.exchange(
+                "http://localhost:"+port+"/ratings",
+                HttpMethod.POST,
+                request,
+                new ParameterizedTypeReference<>() {}
+        );
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
+        Rating actualRating = response.getBody(), expectedRating = new Rating(7001L, 1L, 5L, 922222222L);
+        assertThat(actualRating)
+                .usingRecursiveComparison()
+                .ignoringFields("id")
+                .isEqualTo(expectedRating);
     }
 
+    // curl -X POST "http://localhost:8080/ratings" -H "Content-Type: application/json" -d '{"userId":6, "movieId":1, "rating": 5, "timestamp": 922222222}'
     @Test
-    void deleteRating() {
+    void createRating1() {
+        // JSON payload as a String
+        String jsonPayload = "{\"userId\":6, \"movieId\":1, \"rating\": 5, \"timestamp\":922222222}";
+
+        // Set headers
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        // Build the request
+        HttpEntity<String> request = new HttpEntity<>(jsonPayload, headers);
+        ResponseEntity<String> response = restTemplate.exchange(
+                "http://localhost:"+port+"/ratings",
+                HttpMethod.POST,
+                request,
+                new ParameterizedTypeReference<>() {}
+        );
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CONFLICT);
+    }
+
+    // curl -X DELETE "http://localhost:8080/ratings?userId=8&movieId=1"
+    @Test
+    void deleteRating0() {
+        // Build the request
+        ResponseEntity<String> response = restTemplate.exchange(
+                "http://localhost:"+port+"/ratings?userId=8&movieId=1",
+                HttpMethod.DELETE,
+                null,
+                new ParameterizedTypeReference<>() {}
+        );
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
+
+    // curl -X DELETE "http://localhost:8080/ratings?userId=7002&movieId=1"
+    @Test
+    void deleteRating1() {
+        // Build the request
+        ResponseEntity<String> response = restTemplate.exchange(
+                "http://localhost:"+port+"/ratings?userId=7002&movieId=1",
+                HttpMethod.DELETE,
+                null,
+                new ParameterizedTypeReference<>() {}
+        );
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 }

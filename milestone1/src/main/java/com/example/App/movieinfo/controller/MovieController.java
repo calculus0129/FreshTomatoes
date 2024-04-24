@@ -81,6 +81,7 @@ public class MovieController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Movie not found for movieId " + movieId);
         }
         movieRepository.deleteByMovieId(movieId);
+        // If you really use this method, implement deleting all the corresponding movie ratings, too.
         // Return 200 OK if deletion is successful
         return ResponseEntity.ok().body("Movie successfully deleted for movieId " + movieId);
     }
