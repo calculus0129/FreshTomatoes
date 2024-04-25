@@ -9,7 +9,7 @@ or alternatively, run `sh docker.sh`.
 
 Key Features
 
-1. ?
+1. `curl "http://localhost:8080/chat?plot=they%20save%20the%20earth&genre=action&actor=Chris%20Evans&bgm=I%20don%27t%20remember"`
 2. Temporal Visualization of movie genres and movies
    1) auto complete (recommendation for genre keyword)
       - Examples:
