@@ -43,23 +43,24 @@ public class VisController {
     private int start = 0;
     private int end = 0;
     private int[] time;
+
     @GetMapping("/csv/timeline")
     public void exportIntoCSVtimelines(HttpServletResponse response) throws IOException {
-        if (!(this.Initialized)) initialize_movieInfo_data();
+        initialize_movieInfo_data();
         response.setContentType("text/csv");
         csvGenerator.writeTimelinesToCsv(genreTimeline, time, response.getWriter());
     }
     @GetMapping("/csv/timeline/one")
     public void exportIntoCSVtimeline (HttpServletResponse response, @RequestParam String g) throws IOException {
         if (!movieGenres.contains(g)) throw new MovieNotFoundException();
-        if (!(this.Initialized)) initialize_movieInfo_data();
+        initialize_movieInfo_data();
         response.setContentType("text/csv");
         csvGenerator.writeTimelineToCsv(genreTimeline.get(g), time, response.getWriter());
     }
     @GetMapping("/csv/year")
     public void exportIntoCSVyear (HttpServletResponse response, @RequestParam(value = "y", required = false) Integer y, @RequestParam(value = "t", required = false) String t) throws IOException{
         if (y == null && t == null) throw new MovieNotFoundException();
-        if (!(this.Initialized)) initialize_movieInfo_data();
+        initialize_movieInfo_data();
         if (y != null) {
             if (y > end || y < start) throw new MovieNotFoundException();
             response.setContentType("text/csv");
@@ -74,9 +75,7 @@ public class VisController {
     public ResponseEntity<List<String>> autoMovieGenre(@RequestParam String s) {
         /*return autocompleted recommendation string of movie genre*/
         List<String> temp = movieGenres.stream().filter(genre -> strMatch(s, genre)).toList();
-        if (temp.size() > 4) {
-            return ResponseEntity.ok().body(temp.subList(0, 4));
-        } else return ResponseEntity.ok().body(temp);
+        return ResponseEntity.ok().body(temp);
     }
     @GetMapping("/titles")
     public ResponseEntity<List<String>> autoMovieTitle(@RequestParam String s) {
@@ -87,7 +86,8 @@ public class VisController {
             return ResponseEntity.ok().body(temp.subList(0, 4));
         } else return ResponseEntity.ok().body(temp);
     }
-    public void initialize_movieInfo_data() {
+    private void initialize_movieInfo_data() {
+        if (this.Initialized) return;
         // get movies that rating have been done
         List<Long> movieIds = template.query(Rating.class).distinct("movieId").as(Long.class).all();
         List<Movie> movies = template.query(Movie.class).matching(query(where("movieId").in(movieIds))).all();
