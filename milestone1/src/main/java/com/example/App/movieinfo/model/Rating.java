@@ -3,6 +3,8 @@ package com.example.App.movieinfo.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.Instant;
+import java.time.ZoneId;
 import java.util.Objects;
 
 @Document(collection = "rating")
@@ -43,7 +45,9 @@ public class Rating {
     public Long getTimestamp() {
         return this.timestamp;
     }
-
+    public int getYear() {
+        return Instant.ofEpochSecond(this.timestamp).atZone(ZoneId.systemDefault()).toLocalDateTime().getYear(); // inefficient
+    }
     public void setId(String id) {
         this.id = id;
     }
