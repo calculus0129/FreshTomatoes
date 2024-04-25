@@ -7,7 +7,7 @@ RUN apt-get update
 RUN apt-get install -y wget
 RUN apt-get install -y gnupg2
 RUN apt-get install -y vim
-RUN apt-get install -y curl netcat
+RUN apt-get install -y curl
 RUN apt-get install -y openjdk-17-jdk
 RUN apt-get install -y maven
 RUN rm -rf /var/lib/apt/lists/*
