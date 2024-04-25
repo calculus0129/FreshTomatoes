@@ -11,17 +11,17 @@ Key Features
 
 1. ?
 2. Temporal Visualization of movie genres and movies
-   1- auto complete (recommendation for genre keyword)
+   1) auto complete (recommendation for genre keyword)
       - Examples:
          - `curl http://localhost:8080/movieInfo/genres?s=F`
          - Output: list of genre name start with "F"
          - `curl http://localhost:8080/movieInfo/titles?s=Toygenres?s=Documentarya`
          - Output: empty list
-   2- auto complete (recommendation for movie keyword)
+   2) auto complete (recommendation for movie keyword)
         - Examples:
            - `curl http://localhost:8080/movieInfo/titles?s=Toy%20Sto`
            - Output: list of movie titles starting with "Toy Sto"
-   3- export csv for visualization
+   3) export csv for visualization
       1) export csv for genre timeline
       - `curl http://localhost:8080/movieInfo/csv/timeline`
       2) export csv for one genre timeline (e.g. Sci-Fi and Action)
