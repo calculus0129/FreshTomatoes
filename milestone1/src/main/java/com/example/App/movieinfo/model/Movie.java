@@ -36,6 +36,14 @@ public class Movie { // Spring data mongodb maps the Movie class into a collecti
         return this.genres;
     }
 
+    public int getYear() {
+        int n = this.title.length();
+        return Integer.parseInt(this.title.substring(n-5, n-1));
+    }
+    public static int getYear(String s) {
+        int n = s.length();
+        return Integer.parseInt(s.substring(n-5, n-1));
+    }
     public void setId(String id) {
         this.id = id;
     }
