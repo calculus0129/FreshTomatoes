@@ -41,5 +41,5 @@ COPY milestone1 ./milestone1
 COPY run.sh .
 
 # A container execute a bash shell by default when the built image is launched
-
+# Comment-out this line when submitting!
 CMD ["sh", "run.sh"]
