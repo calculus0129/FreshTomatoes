@@ -16,6 +16,7 @@ and see the implementation result by using below examples: <br/>
 ## Key Features
 ### Feature1 : Finding movie titles via hints(plot, genre, actor, bgm); uses ChatGPT API
    This feature lets users to find movie titles when they only have other clues in their mind.
+   - There's no change from the proposal
    #### GET RestAPI /chat
    It has request parameters plot, genre, actor, and bgm. And the user requests for each of sections are processed as a prompt query that is appropriate for the ChatGPT to give out matching movie title results. And the API process the ChatGPT's answer in the form "These are the candidates: movie1 name: ~".
    - Example:
