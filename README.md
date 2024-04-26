@@ -77,8 +77,8 @@ Given user information, this method gives the user a list of movies sorted in a 
 
 To be specific, the INPUT and OUTPUT are as follows:
 
-INPUT: information of the user (age, gender, and occupation).
-OUTPUT: List of the movies rated by the users with the same attributes, sorted in such order:
+- INPUT: information of the user (age, gender, and occupation).
+- OUTPUT: List of the movies rated by the users with the same attributes, sorted in such order:
 
 (Consider the previous criteria superior to the following criteria)
 
