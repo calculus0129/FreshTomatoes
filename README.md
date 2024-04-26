@@ -42,7 +42,7 @@ Below API's are for exporting csv that is matched with the user's request.
    - `curl http://localhost:8080/movieInfo/csv/timeline/one?g=Action`
 #### GET RestAPI /movieInfo/csv/year
    This API export csv that has movies that are released in the same year, sorted by number of ratings done for each of them
-   -Examples:
+   - Examples:
    - export csv for movie list sorted with increasing rating numbers released in the requested year (e.g. 1970)
    - `curl -X GET http://localhost:8080/movieInfo/csv/year?y=1970`
    - export csv for movie list sorted with increasing rating numbers released in the same year with the requested movie (e.g. Toy Story (1995))
