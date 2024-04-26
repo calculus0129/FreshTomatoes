@@ -1,4 +1,4 @@
-# MileStone2 
+# FreshTomatoes
 ## SetUp
 From the directory where our submitted Dockerfile and run.sh file are in, <br/>
 Build docker image and container
