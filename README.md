@@ -9,7 +9,9 @@ or alternatively, run `sh docker.sh`.
 
 Key Features
 
-1. `curl "http://localhost:8080/chat?plot=they%20save%20the%20earth&genre=action&actor=Chris%20Evans&bgm=I%20don%27t%20remember"`
+1. Finding movie titles via hints(plot, genre, actor, bgm); uses ChatGPT API
+   - Example:
+   - `curl "http://localhost:8080/chat?plot=they%20save%20the%20earth&genre=action&actor=Chris%20Evans&bgm=I%20don%27t%20remember"`
 2. Temporal Visualization of movie genres and movies
    1) auto complete (recommendation for genre keyword)
       - Examples:
@@ -32,7 +34,7 @@ Key Features
       4) export csv for movie list sorted with increasing rating numbers released in the same year with the requested movie (e.g. Toy Story (1995))
       - `curl -X GET http://localhost:8080/movieInfo/csv/year?t="Toy%20Story%20(1995)"`
     
-4. Recommendation via User Information
+3. Recommendation via User Information
    - List the movies rated by the users with the given user information(gender, age, occupation), sorted in averageRating-decreasing, reviewNumber-decreasing, and movieTitle lexicographic order.
    - Examples:
      - `curl "http://localhost:8080/recommend/user?gender=F&age=18&occ=20"`
