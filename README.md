@@ -10,7 +10,7 @@ and inside the docker container, run `sh run.sh`
 
 After all tests are finished(each test includes starting spring application and loading data), <br/>
 and after the spring application starts and all data are uploaded(last log message: User data all uploaded!), <br/>
-open new terminal of the same docker container <br/>
+open new terminal of the same docker container (`docker exec -it cn_container bash`) <br/>
 and see the implementation result by using below examples: <br/>
 
 ## Key Features
@@ -49,14 +49,51 @@ Below API's are for exporting csv that is matched with the user's request.
    - `curl -X GET http://localhost:8080/movieInfo/csv/year?t="Toy%20Story%20(1995)"`
 
 ### Feature3 : Recommendation via User Information
-   - List the movies rated by the users with the given user information(gender, age, occupation), sorted in averageRating-decreasing, reviewNumber-decreasing, and movieTitle lexicographic order.
-   - Examples:
-     - `curl "http://localhost:8080/recommend/user?gender=F&age=18&occ=20"`
-       - Output: 1483 of movie data sorted.
-     - `curl "http://localhost:8080/recommend/user?gender=M&age=18&occ=13"`
-       - Output: []. That's because there are no such user rating information.
 
+#### What does it do?
 
+Basically, given website user information, it recommends movies based on the ratings of the similar people.
 
+#### Changes from the proposal
 
+Feature is not changed. But the implementation slightly deviated from the concrete project plan;
+
+1. We did not implement the user login system. We could simply get the user information from the HTTP queries.
+2. We did not output a given maximum number of recommended movies, e.g. top 5 movies. Instead, we output the whole possible movie data, sorted so that each previous movie is more recommended than its each next movie.
+
+#### REST APIs
+
+For this feature, there is only one REST API: recByUser.
+
+```java
+@GetMapping(value = "user", params = {"gender", "age", "occ"})
+public ResponseEntity<?> recByUser(
+      @RequestParam("gender") String gender,
+      @RequestParam(value = "age", required = true) Long age,
+      @RequestParam("occ") Long occ)
+```
+
+Given user information, this method gives the user a list of movies sorted in a way that the prior movie is more recommended.
+
+To be specific, the INPUT and OUTPUT are as follows:
+
+INPUT: information of the user (age, gender, and occupation).
+OUTPUT: List of the movies rated by the users with the same attributes, sorted in such order:
+
+(Consider the previous criteria superior to the following criteria)
+
+1. Average rating (based on the ratings made by the specific type of user): monotonically decreasing
+2. Number of reviews: monotonically decreasing
+3. Title of movie: lexicographically
+
+#### Example curl commands
+
+- `curl "http://localhost:8080/recommend/user?gender=F&age=18&occ=20"`
+ - Output: 1483 of movie data sorted.
+- `curl "http://localhost:8080/recommend/user?gender=M&age=18&occ=13"`
+ - Output: []. That's because there are no such user rating information.
+- `curl "http://localhost:8080/recommend/user?gender=a&age=18&occ=20"`
+ - Output: BAD_REQUEST response (invalid gender)
+- `curl "http://localhost:8080/recommend/user?gender=F&age=18&occ=21`
+ - Output: BAD_REQUEST response (invalid occupation)
 
