@@ -39,7 +39,7 @@ RUN mkdir /root/project
 WORKDIR /root/project
 
 # add "milestone1" directory and "run.sh" file under WORKDIR
-RUN mkdir /milestone1
+# RUN mkdir /milestone1
 #COPY milestone1 ./milestone1
 COPY run.sh .
 
