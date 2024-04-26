@@ -15,11 +15,14 @@ and see the implementation result by using below examples: <br/>
 
 ## Key Features
 ### Feature1 : Finding movie titles via hints(plot, genre, actor, bgm); uses ChatGPT API
+   This feature lets users to find movie titles when they only have other clues in their mind.
    #### GET RestAPI /chat
    It has request parameters plot, genre, actor, and bgm. And the user requests for each of sections are processed as a prompt query that is appropriate for the ChatGPT to give out matching movie title results. And the API process the ChatGPT's answer in the form "These are the candidates: movie1 name: ~".
    - Example:
    - `curl "http://localhost:8080/chat?plot=they%20save%20the%20earth&genre=action&actor=Chris%20Evans&bgm=I%20don%27t%20remember"`
 ### Feature2 : Temporal Visualization of movie genres and movies
+   This feature supplies insightful visualization about the movie genres and movies through time. The first visualization shows the timeline of genre popularities(represented by number of movies) in a form of streamgraph, and the second visualization shows the popularity(represented by number of ratings) comparison of different movies in the certain year. 
+   - The contents of visualization have changed. We firstly expected to describe popularity timeline based on the rating data, but since there was only ratings done in 2000, 2001, 2002, 2003(small range). So we changed the timeline range to year of movie releases.
    #### Get RestAPI /movieInfo/genres
    Through this API, user can get auto completed genre name from the partial name. This API is required because user can know which genres can be accessed through our application.
    - Examples:
