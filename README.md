@@ -11,7 +11,7 @@ and inside the docker container, run `sh run.sh`
 After all tests are finished(each test includes starting spring application and loading data), <br/>
 and after the spring application starts and all data are uploaded(last log message: User data all uploaded!), <br/>
 open new terminal of the same docker container <br/>
-and test implementation belowings: <br/>
+and see the implementation result by using below examples: <br/>
 
 ## Curl Examples
 ### Feature1 : Finding movie titles via hints(plot, genre, actor, bgm); uses ChatGPT API
