@@ -4,12 +4,12 @@ Build docker image and container
 docker build -t ms1:cn .
 docker run -it --name cn_container ms1:cn
 ```
-and inside the docker container, run `sh run.sh`
+and inside the docker container, run `sh run.sh` 
 
-After all tests are finished(test includes loading data),
-and after all data are uploaded(last log message: User data all uploaded!),
-open new terminal of the same docker container
-and test implementation belowings:
+After all tests are finished(test includes loading data), <br/>
+and after all data are uploaded(last log message: User data all uploaded!), <br/>
+open new terminal of the same docker container <br/>
+and test implementation belowings: <br/>
 
 Key Features
 
