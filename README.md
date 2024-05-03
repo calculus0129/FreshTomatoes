@@ -14,13 +14,29 @@ open new terminal of the same docker container (`docker exec -it cn_container ba
 and see the implementation result by using below examples: <br/>
 
 ## Key Features
-### Feature1 : Finding movie titles via hints(plot, genre, actor, bgm); uses ChatGPT API
-   This feature lets users to find movie titles when they only have other clues in their mind.
+### Feature1 : ChatGPT based movie search engine
+   Finds movie titles via roughly remembered informations(e.g., plot, genre, actor, background music).
+
+   Using ChatGPT API, this feature lets users to find movie titles based on the clues about movies provided by the user.
+
+   The ChatGPT uses a pre-defined output format for the response: `[name_1, name_2, ..., name_n]`.
+   
+   If the response from the ChatGPT matches this format, we refine the response to a more human-readable format: `These are the candidates: movie 1 name: name_1, movie 2 name: name_2, ...`.
+
    - There's no change from the proposal
+
    #### GET RestAPI /chat
-   It has request parameters plot, genre, actor, and bgm. And the user requests for each of sections are processed as a prompt query that is appropriate for the ChatGPT to give out matching movie title results. And the API process the ChatGPT's answer in the form "These are the candidates: movie1 name: ~".
-   - Example:
+   The user provides the plot, genre, actor, and background music(bgm) as query parameters, and the ChatGPT responds with the names of matching movies.
+
+   Example:
    - `curl "http://localhost:8080/chat?plot=they%20save%20the%20earth&genre=action&actor=Chris%20Evans&bgm=I%20don%27t%20remember"`
+
+   Expected output:
+   - `These are the candidates: movie 1 name: Captain America: The First Avenger, movie 2 name: Avengers: Infinity War, and movie 3 name: Avengers: Endgame`
+
+   > Note that: ChatGPT's actual answers may vary! There are some randomness in ChatGPT's response. ChatGPT doesn't always output the exact same response.
+
+
 ### Feature2 : Temporal Visualization of movie genres and movies
    This feature supplies insightful visualization about the movie genres and movies through time. The first visualization shows the timeline of genre popularities(represented by number of movies) in a form of streamgraph, and the second visualization shows the popularity(represented by number of ratings) comparison of different movies in the certain year. 
    - The contents of visualization have changed. We firstly expected to describe popularity timeline based on the rating data, but since there was only ratings done in 2000, 2001, 2002, 2003(small range). So we changed the timeline range to year of movie releases.
