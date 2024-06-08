@@ -14,13 +14,13 @@
 //        })
 //        .catch(error => console.error('Error loading the movies:', error));
 //});
-document.getElementById('recommendationForm').addEventListener('submit', function(event) {
+document.getElementById('recommendationForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the traditional form submission
 
     const form = event.target; // [object HTMLFormElement]
     const formData = new FormData(form); // [object FormData]
     const params = new URLSearchParams(formData).toString(); // gender=F&age=1&occ=1
-//    console.log(`form: ${form}\nformData: ${formData}\nparams: ${params}`);
+    //    console.log(`form: ${form}\nformData: ${formData}\nparams: ${params}`);
 
     fetch(`/recommend/user?${params}`, { method: 'GET' })
         .then(response => response.json())
