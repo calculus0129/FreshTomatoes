@@ -2,11 +2,9 @@
 <html lang="ko" dir="ltr"> <!-- left 2 right https://blog.naver.com/qkrdudrms864/222582143450 -->
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>F3 Movie Recommendation</title>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="hello.js"></script>
 </head>
 
 <body>
@@ -17,7 +15,8 @@
 <h1>Recommendation via User Information</h1>
 
 <!-- action: set it! -->
-<form method="get">
+<!--<form action="/recommend/user" method="get">-->
+<form id="recommendationForm">
     <input type="radio" name="gender" id="m" value="M" required>
     <label for="m">Male</label>
     <input type="radio" name="gender" id="f" value="F" required>
@@ -56,15 +55,16 @@
         <option value=19>unemployed</option>
         <option value=20>writer</option>
     </select>
-    <input type="submit" value="Submit">
+    <button type="submit">Submit</button>
 </form>
 
-<div>
-    <p class="greeting-id">The ID is </p>
-    <p class="greeting-content">The content is </p>
-</div>
-
-<script type="module" src="f3index.js"></script>
+<div id="movies"></div> <!-- Placeholder where movie data will be appended -->
+<script src="app.js"></script> <!-- Link to the JavaScript file -->
+<!--<div>-->
+<!--    <p class="greeting-id">The ID is </p>-->
+<!--    <p class="greeting-content">The content is </p>-->
+<!--</div>-->
+<!--<script type="module" src="./getmovie.js"></script>-->
 </body>
 
 </html>
