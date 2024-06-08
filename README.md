@@ -1,12 +1,25 @@
 # FreshTomatoes
+
 ## SetUp
+
+### Local Runs
+
+Simply Enter:
+```sh run-fast.sh```
+
+You can alternatively use `sh run.sh` if you want to test the application, too.
+
+Then, you can access the web application with the <a target="_blank" src="localhost:8080">localhost:8080</a>.
+
+### Running in the docker
+
 From the directory where our submitted Dockerfile and run.sh file are in, <br/>
 Build docker image and container
 ```
 docker build -t ms1:cn .
 docker run -it --name cn_container ms1:cn
 ```
-and inside the docker container, run `sh run.sh` 
+and inside the docker container, run `sh run.sh`
 
 After all tests are finished(each test includes starting spring application and loading data), <br/>
 and after the spring application starts and all data are uploaded(last log message: User data all uploaded!), <br/>
