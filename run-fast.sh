@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd milestone1
-# mongod --fork --logpath /var/log/mongod.log # Background에서 돌리는 거
+mongod --fork --logpath /var/log/mongod.log # Background에서 돌리는 거
 # Wait for MongoDB to be fully ready. netcat must be installed.
 # while ! nc -z localhost 27017; do   
 #   sleep 0.1
