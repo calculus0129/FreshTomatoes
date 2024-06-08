@@ -10,61 +10,56 @@
 <body>
     <header><a href="../">FreshTomatoes</a></header>
 
-<div class="container"></div>
+    <div class="container"></div>
 
-<h1>Recommendation via User Information</h1>
+    <h1>Recommendation via User Information</h1>
 
-<!-- action: set it! -->
-<!--<form action="/recommend/user" method="get">-->
-<form id="recommendationForm">
-    <input type="radio" name="gender" id="m" value="M" required>
-    <label for="m">Male</label>
-    <input type="radio" name="gender" id="f" value="F" required>
-    <label for="f">Female</label>
-    <select name="age" id="ageId" required>
-        <option></option>
-        <option value=1>Under 18</option>
-        <option value=18>18-24</option>
-        <option value=25>25-34</option>
-        <option value=35>35-44</option>
-        <option value=45>45-49</option>
-        <option value=50>50-55</option>
-        <option value=56>56+</option>
-    </select>
-    <select name="occ" id="occId" required>
-        <option></option>
-        <option value=0>other or not specified</option>
-        <option value=1>academic/educator</option>
-        <option value=2>artist</option>
-        <option value=3>clerical/admin</option>
-        <option value=4>college/grad student</option>
-        <option value=5>customer service</option>
-        <option value=6>doctor/health care</option>
-        <option value=7>executive/managerial</option>
-        <option value=8>farmer</option>
-        <option value=9>homemaker</option>
-        <option value=10>K-12 student</option>
-        <option value=11>lawyer</option>
-        <option value=12>programmer</option>
-        <option value=13>retired</option>
-        <option value=14>sales/marketing</option>
-        <option value=15>scientist</option>
-        <option value=16>self-employed</option>
-        <option value=17>technician/engineer</option>
-        <option value=18>tradesman/craftsman</option>
-        <option value=19>unemployed</option>
-        <option value=20>writer</option>
-    </select>
-    <button type="submit">Submit</button>
-</form>
+    <!-- action: set it! -->
+    <!--<form action="/recommend/user" method="get">-->
+    <form id="recommendationForm">
+        <input type="radio" name="gender" id="m" value="M" required>
+        <label for="m">Male</label>
+        <input type="radio" name="gender" id="f" value="F" required>
+        <label for="f">Female</label>
+        <select name="age" id="ageId" required>
+            <option></option>
+            <option value=1>Under 18</option>
+            <option value=18>18-24</option>
+            <option value=25>25-34</option>
+            <option value=35>35-44</option>
+            <option value=45>45-49</option>
+            <option value=50>50-55</option>
+            <option value=56>56+</option>
+        </select>
+        <select name="occ" id="occId" required>
+            <option></option>
+            <option value=0>other or not specified</option>
+            <option value=1>academic/educator</option>
+            <option value=2>artist</option>
+            <option value=3>clerical/admin</option>
+            <option value=4>college/grad student</option>
+            <option value=5>customer service</option>
+            <option value=6>doctor/health care</option>
+            <option value=7>executive/managerial</option>
+            <option value=8>farmer</option>
+            <option value=9>homemaker</option>
+            <option value=10>K-12 student</option>
+            <option value=11>lawyer</option>
+            <option value=12>programmer</option>
+            <option value=13>retired</option>
+            <option value=14>sales/marketing</option>
+            <option value=15>scientist</option>
+            <option value=16>self-employed</option>
+            <option value=17>technician/engineer</option>
+            <option value=18>tradesman/craftsman</option>
+            <option value=19>unemployed</option>
+            <option value=20>writer</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
 
-<div id="movies"></div> <!-- Placeholder where movie data will be appended -->
-<script src="app.js"></script> <!-- Link to the JavaScript file -->
-<!--<div>-->
-<!--    <p class="greeting-id">The ID is </p>-->
-<!--    <p class="greeting-content">The content is </p>-->
-<!--</div>-->
-<!--<script type="module" src="./getmovie.js"></script>-->
+    <div id="movies"></div> <!-- Placeholder where movie data will be appended -->
+    <script src="app.js"></script> <!-- Link to the JavaScript file -->
 </body>
 
 </html>
