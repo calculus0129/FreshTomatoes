@@ -8,11 +8,9 @@ import java.util.regex.Matcher;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.IOException;
-
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,30 +41,24 @@ public class ChatController {
         return new String(Files.readAllBytes(Paths.get(file)));
     }
 
+    // GET REST API /chat
     @GetMapping("/chat")
     public ResponseEntity<String> chat(@RequestParam String plot, @RequestParam String genres, @RequestParam String stars, @RequestParam String directors) {
-        String content = "";
+        String prompt_part1 = "";
         try {
-            content = readFileAsString("/home/nyw0102/projects-group3/milestone1/src/main/resources/prompt.txt");
+            prompt_part1 = readFileAsString("./src/main/resources/prompt_part1.txt");
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        String prompt = content + "\n" + "<Actual Question>\n" + "plot=" + plot +", genres=" + genres + ", stars=" + stars + ", directors=" + directors;
+        // synthesize the prompt
+        String prompt = prompt_part1 + "\n" + "<Actual Question>\n" + "plot=" + plot +", genres=" + genres + ", stars=" + stars + ", directors=" + directors;
 
+        // make request and store the answer
         ChatRequest request = new ChatRequest(model, prompt);
-
-        ChatResponse response = restTemplate.postForObject(
-                apiUrl,
-                request,
-                ChatResponse.class);
-
+        ChatResponse response = restTemplate.postForObject(apiUrl, request, ChatResponse.class);
         String answer = response.getChoices().get(0).getMessage().getContent();
         
-
-        // Refining the answer
-        // String modifiedString = answer.replaceAll("^\"```json\\n|\n|\\n```\"$", "");
-        // System.out.println(modifiedString);
         return ResponseEntity.ok(answer);
     }
 }
