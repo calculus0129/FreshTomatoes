@@ -7,24 +7,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-//import org.springframework.context.annotation.Bean;
-//import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
-//import java.io.FileNotFoundException;
-import java.io.FileReader;
-//import java.util.ArrayList;
-import java.util.HashSet;
-//import java.util.Optional;
-import java.util.List;
-import java.util.Set;
-
-
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -66,7 +60,14 @@ public class LoadMongoDB implements CommandLineRunner {
     }
 
     private void loadMovies() throws Exception {
-        try (var br = new BufferedReader(new FileReader("data/movies.dat"))) {
+        log.info("Root Path: {}", getClass().getClassLoader().getResource("").getPath());
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("data/movies.dat");
+        if (inputStream == null) {
+            log.error("Cannot find 'movies.dat' in classpath");
+//            throw new IllegalStateException("Cannot find 'movies.dat' in classpath");
+        }
+
+        try (var br = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
             while ((line = br.readLine()) != null) {
                 var parts = line.trim().split("::");
@@ -81,12 +82,8 @@ public class LoadMongoDB implements CommandLineRunner {
             }
         } catch (Exception e) {
             log.error("Error preloading movies: {}", e.getMessage());
+//            throw e;
         }
-//        // for test
-//        if (movieRepository.findByMovieId(1L).isEmpty()) {
-//            log.error("Failed to find movie with ID 1");
-//            throw new RuntimeException("Could not find Movie with ID 1");
-//        }
     }
 
     private void loadRatings() throws Exception {
