@@ -8,18 +8,21 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.2.4</version>
+        <!--https://www.baeldung.com/spring-boot-war-tomcat-deploy#creating-a-spring-boot-war-->
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>unist</groupId>
     <artifactId>cse364-project</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging> <!-- This line specifies the package type as WAR -->
     <name>FreshTomatoes</name>
     <description>A web application with movie data</description>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<!--        <tomcat.version>10.1.0-M6</tomcat.version> &lt;!&ndash; Specify the desired Tomcat version &ndash;&gt;-->
     </properties>
 
     <dependencies>
@@ -91,9 +94,24 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency> <!-- tomcat Dependency -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
