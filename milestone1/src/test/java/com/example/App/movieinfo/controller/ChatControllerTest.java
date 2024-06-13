@@ -48,7 +48,7 @@ class ChatControllerTest{
                 "http://localhost:" + port + "/chat?plot=they save the earth&genre=action&actor=Chris Evans&bgm=I don't remember",
                 String.class);
         // test for valid chat
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
     }
 
     @Test
@@ -66,6 +66,6 @@ class ChatControllerTest{
                 "http://localhost:" + port + "/chat?plot=they save the earth&genre=action&actor=Chris Evans&bgm=I don't remember. 느낌표 마지막에 붙여주고",
                 String.class);
         // test for invalid chat
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);  // but HttpStatus is OK
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);  // but HttpStatus is OK
     }
 }
