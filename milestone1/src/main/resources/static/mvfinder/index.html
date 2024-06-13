@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>F1 Movie Finder</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header><a href="..">FreshTomatoes</a></header>
 
+<body>
+    <header><a href="../">Go back to Main</a></header>
+
+    <h1>ChatGPT based movie search engine</h1>
+    <p>Enter the details you remember about the movie, and we will help you find it!</p>
+
+    <!-- Text boxed for user inputs -->
+    <div id="userInput" class="card container">
+        <form>
+            <div class="mb-3 row">
+                <label for="plot" class="description-text col-sm-2 col-form-label">Plot</label>
+                <div class="col-sm-10">
+                    <input type="text" id="plot" class="form-control" placeholder="Enter the plot...">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="genres" class="description-text col-sm-2 col-form-label">Genres</label>
+                <div class="col-sm-10">
+                    <input type="text" id="genres" class="form-control" placeholder="Enter the genres...">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="stars" class="description-text col-sm-2 col-form-label">Stars</label>
+                <div class="col-sm-10">
+                    <input type="text" id="stars" class="form-control" placeholder="Enter the stars...">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="directors" class="description-text col-sm-2 col-form-label">Directors</label>
+                <div class="col-sm-10">
+                    <input type="text" id="directors" class="form-control" placeholder="Enter the directors...">
+                </div>
+            </div>
+            <p id="inputErrorMessage"></p>
+            <button type="button" id="submit-btn" class="btn btn-primary mb-3" style="float: right;">Submit</button>
+        </form>
+    </div>
+
+    <div id="candidate" style="display:none;">
+        <div id="moviecandidiate">
+            <!-- Placeholder where movie data will be appended -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
