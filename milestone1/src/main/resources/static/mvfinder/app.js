@@ -1,18 +1,23 @@
 
 $("#submit-btn").click(function (event) {
+    // variables for each parameters
     var plot = $("#plot").val();
     var genres = $("#genres").val();
     var stars = $("#stars").val();
     var directors = $("#directors").val();
+
     $.ajax({
+    // GET REST API 
       dataType: "JSON",
       url: `http://localhost:8080/chat?plot=${plot}&genres=${genres}&stars=${stars}&directors=${directors}`,
       contentType: "application/json; charset=utf-8",
       method: "GET",
+
       success: function (response) {
         const moviesContainer = document.getElementById('moviecandidiate');
             moviesContainer.innerHTML = ''; // Clear previous results
 
+            // Visualizing format
             const movieCard = `
                 <div class="card mb-3">
                     <div class="card-header">
@@ -35,8 +40,8 @@ $("#submit-btn").click(function (event) {
 
             moviesContainer.innerHTML = movieCard;
             $('#candidate').show();
-
       },
+
       error: function () {
         console.log("Error occurred during AJAX request.");
       }

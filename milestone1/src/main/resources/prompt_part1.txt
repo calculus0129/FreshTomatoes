@@ -1,4 +1,3 @@
-
 <Task Description>
 From the given partial infomation (plot, genres, stars, directors) about the movie that user is finding, the task is to extract meaningful infomation from the IMDb website. Please give me only one candidate.
 <Output Format>
