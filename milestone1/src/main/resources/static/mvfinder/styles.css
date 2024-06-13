@@ -1,0 +1,144 @@
+/* Reset some basic styles */
+body, h1, p, form, div, header {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffebee;
+    color: #000;
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    background-color: #ef5350;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+header a:hover {
+    color: #d32f2f;
+}
+
+/* Main title and description */
+h1 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 2em;
+}
+
+p {
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #616161;
+}
+
+/* Card styling */
+.card {
+    background-color: #ffcdd2;
+    border: 1px solid #e57373;
+    border-radius: 4px;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.container {
+    padding: 10px;
+}
+
+.description-text {
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+/* Form input styling */
+.form-control {
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #e57373;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1em;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #d32f2f;
+}
+
+/* Card header styling */
+.card-header {
+    background-color: #ef5350;
+    padding: 5px;
+    border-bottom: 1px solid #e57373;
+    border-radius: 4px 4px 0 0;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.card-header a {
+    color: #000;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.card-header a:hover {
+    text-decoration: underline;
+}
+
+/* Card body styling */
+.card-body {
+    padding: 10px;
+}
+
+.card-body p {
+    margin: 5px 0;
+}
+
+/* Title text styling */
+.title-text {
+    text-align: center;
+    font-size: 1.2em;
+    color: #000;
+    margin-top: 20px;
+}
+
+/* Error message styling */
+#error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
