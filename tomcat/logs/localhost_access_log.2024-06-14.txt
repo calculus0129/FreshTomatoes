@@ -36,3 +36,15 @@
 0:0:0:0:0:0:0:1 - - [14/Jun/2024:02:40:45 +0900] "GET /cse364-project/rec HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [14/Jun/2024:02:40:45 +0900] "GET /cse364-project/rec/index.html HTTP/1.1" 200 2563
 0:0:0:0:0:0:0:1 - - [14/Jun/2024:02:40:45 +0900] "GET /cse364-project/rec/app.js HTTP/1.1" 200 2116
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:14:42:01 +0900] "GET / HTTP/1.1" 200 11437
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:14:42:01 +0900] "GET /tomcat.svg HTTP/1.1" 200 68761
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:14:58:55 +0900] "GET / HTTP/1.1" 200 11437
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:14:58:56 +0900] "GET /cse364-project/index.html HTTP/1.1" 200 116416
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:14:58:56 +0900] "GET /cse364-project/css/home.css HTTP/1.1" 404 127
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:14:58:58 +0900] "GET /cse364-project/rec HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:14:58:58 +0900] "GET /cse364-project/rec/index.html HTTP/1.1" 200 2566
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:14:58:58 +0900] "GET /cse364-project/rec/app.js HTTP/1.1" 200 2117
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:14:59:06 +0900] "GET /recommend/user?gender=F&age=18&occ=1 HTTP/1.1" 404 826
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:15:00:03 +0900] "GET /recommend/user?gender=F&age=18&occ=1 HTTP/1.1" 404 826
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:15:00:16 +0900] "GET /recommend/user?gender=F&age=18&occ=1 HTTP/1.1" 404 826
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:15:00:57 +0900] "GET /recommend/user?gender=F&age=18&occ=1 HTTP/1.1" 404 826

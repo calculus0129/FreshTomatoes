@@ -1914,3 +1914,235 @@
  java.base@17.0.10/java.lang.Thread.run(Thread.java:842)
 14-Jun-2024 02:55:50.272 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8080"]을(를) 중지시킵니다.
 14-Jun-2024 02:55:50.282 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8080"]을(를) 소멸시킵니다.
+14-Jun-2024 14:41:48.473 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.24
+14-Jun-2024 14:41:48.474 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  May 9 2024 17:41:23 UTC
+14-Jun-2024 14:41:48.474 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.24.0
+14-Jun-2024 14:41:48.474 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Mac OS X
+14-Jun-2024 14:41:48.474 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     13.6.1
+14-Jun-2024 14:41:48.474 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          aarch64
+14-Jun-2024 14:41:48.475 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+14-Jun-2024 14:41:48.475 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+14-Jun-2024 14:41:48.475 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+14-Jun-2024 14:41:48.475 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     /Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:41:48.475 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     /Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:41:48.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=/Users/ryanb/Documents/github/projects-group3/tomcat/conf/logging.properties
+14-Jun-2024 14:41:48.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+14-Jun-2024 14:41:48.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djdk.tls.ephemeralDHKeySize=2048
+14-Jun-2024 14:41:48.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+14-Jun-2024 14:41:48.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+14-Jun-2024 14:41:48.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+14-Jun-2024 14:41:48.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+14-Jun-2024 14:41:48.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+14-Jun-2024 14:41:48.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+14-Jun-2024 14:41:48.483 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+14-Jun-2024 14:41:48.483 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=/Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:41:48.483 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=/Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:41:48.483 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=/Users/ryanb/Documents/github/projects-group3/tomcat/temp
+14-Jun-2024 14:41:48.487 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 프로덕션 환경들에서 최적의 성능을 제공하는, APR 기반 Apache Tomcat Native 라이브러리가, 다음 java.library.path에서 발견되지 않습니다: [/Users/ryanb/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+14-Jun-2024 14:41:48.600 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+14-Jun-2024 14:41:48.615 INFO [main] org.apache.catalina.startup.Catalina.load [229] 밀리초 내에 서버가 초기화되었습니다.
+14-Jun-2024 14:41:48.634 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+14-Jun-2024 14:41:48.635 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.24]
+14-Jun-2024 14:41:48.644 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR 웹 애플리케이션 아카이브 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/cse364-project.war]을(를) 배치합니다.
+14-Jun-2024 14:41:49.892 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Jun-2024 14:41:52.056 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR 웹 애플리케이션 아카이브 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/cse364-project.war]의 배치가 [3,412] 밀리초에 완료되었습니다.
+14-Jun-2024 14:41:52.057 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/docs]을(를) 배치합니다.
+14-Jun-2024 14:41:52.067 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/docs]에 대한 배치가 [10] 밀리초에 완료되었습니다.
+14-Jun-2024 14:41:52.068 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/manager]을(를) 배치합니다.
+14-Jun-2024 14:41:52.089 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/manager]에 대한 배치가 [21] 밀리초에 완료되었습니다.
+14-Jun-2024 14:41:52.090 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/examples]을(를) 배치합니다.
+14-Jun-2024 14:41:52.194 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/examples]에 대한 배치가 [105] 밀리초에 완료되었습니다.
+14-Jun-2024 14:41:52.194 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/ROOT]을(를) 배치합니다.
+14-Jun-2024 14:41:52.203 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/ROOT]에 대한 배치가 [8] 밀리초에 완료되었습니다.
+14-Jun-2024 14:41:52.203 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/host-manager]을(를) 배치합니다.
+14-Jun-2024 14:41:52.213 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/host-manager]에 대한 배치가 [10] 밀리초에 완료되었습니다.
+14-Jun-2024 14:41:52.214 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+14-Jun-2024 14:41:52.226 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3611] 밀리초 내에 시작되었습니다.
+14-Jun-2024 14:48:38.707 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8080"]을(를) 일시 정지 중
+14-Jun-2024 14:48:38.711 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+14-Jun-2024 14:48:38.765 WARNING [Thread-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads 웹 애플리케이션 [cse364-project]이(가) [BufferPoolPruner-1-thread-1](이)라는 이름의 쓰레드를 시작시킨 것으로 보이지만, 해당 쓰레드를 중지시키지 못했습니다. 이는 메모리 누수를 유발할 가능성이 큽니다. 해당 쓰레드의 스택 트레이스:
+ java.base@17.0.10/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.10/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.10/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.10/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.10/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.10/java.lang.Thread.run(Thread.java:842)
+14-Jun-2024 14:48:38.767 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8080"]을(를) 중지시킵니다.
+14-Jun-2024 14:48:38.775 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8080"]을(를) 소멸시킵니다.
+14-Jun-2024 14:51:19.636 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.24
+14-Jun-2024 14:51:19.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  May 9 2024 17:41:23 UTC
+14-Jun-2024 14:51:19.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.24.0
+14-Jun-2024 14:51:19.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Mac OS X
+14-Jun-2024 14:51:19.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     13.6.1
+14-Jun-2024 14:51:19.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          aarch64
+14-Jun-2024 14:51:19.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+14-Jun-2024 14:51:19.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+14-Jun-2024 14:51:19.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+14-Jun-2024 14:51:19.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     /Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:51:19.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     /Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:51:19.643 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=/Users/ryanb/Documents/github/projects-group3/tomcat/conf/logging.properties
+14-Jun-2024 14:51:19.643 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+14-Jun-2024 14:51:19.643 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djdk.tls.ephemeralDHKeySize=2048
+14-Jun-2024 14:51:19.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+14-Jun-2024 14:51:19.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+14-Jun-2024 14:51:19.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+14-Jun-2024 14:51:19.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+14-Jun-2024 14:51:19.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+14-Jun-2024 14:51:19.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+14-Jun-2024 14:51:19.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+14-Jun-2024 14:51:19.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=/Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:51:19.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=/Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:51:19.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=/Users/ryanb/Documents/github/projects-group3/tomcat/temp
+14-Jun-2024 14:51:19.649 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 프로덕션 환경들에서 최적의 성능을 제공하는, APR 기반 Apache Tomcat Native 라이브러리가, 다음 java.library.path에서 발견되지 않습니다: [/Users/ryanb/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+14-Jun-2024 14:51:19.755 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+14-Jun-2024 14:51:19.768 INFO [main] org.apache.catalina.startup.Catalina.load [214] 밀리초 내에 서버가 초기화되었습니다.
+14-Jun-2024 14:51:19.785 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+14-Jun-2024 14:51:19.785 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.24]
+14-Jun-2024 14:51:19.794 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR 웹 애플리케이션 아카이브 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/cse364-project.war]을(를) 배치합니다.
+14-Jun-2024 14:51:21.147 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Jun-2024 14:51:25.150 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR 웹 애플리케이션 아카이브 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/cse364-project.war]의 배치가 [5,356] 밀리초에 완료되었습니다.
+14-Jun-2024 14:51:25.151 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/docs]을(를) 배치합니다.
+14-Jun-2024 14:51:25.163 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/docs]에 대한 배치가 [11] 밀리초에 완료되었습니다.
+14-Jun-2024 14:51:25.163 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/manager]을(를) 배치합니다.
+14-Jun-2024 14:51:25.181 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/manager]에 대한 배치가 [18] 밀리초에 완료되었습니다.
+14-Jun-2024 14:51:25.181 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/examples]을(를) 배치합니다.
+14-Jun-2024 14:51:25.259 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/examples]에 대한 배치가 [78] 밀리초에 완료되었습니다.
+14-Jun-2024 14:51:25.260 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/ROOT]을(를) 배치합니다.
+14-Jun-2024 14:51:25.266 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/ROOT]에 대한 배치가 [6] 밀리초에 완료되었습니다.
+14-Jun-2024 14:51:25.266 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/host-manager]을(를) 배치합니다.
+14-Jun-2024 14:51:25.274 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/host-manager]에 대한 배치가 [8] 밀리초에 완료되었습니다.
+14-Jun-2024 14:51:25.276 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+14-Jun-2024 14:51:25.282 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [5514] 밀리초 내에 시작되었습니다.
+14-Jun-2024 14:55:35.357 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8080"]을(를) 일시 정지 중
+14-Jun-2024 14:55:35.361 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+14-Jun-2024 14:55:35.395 WARNING [Thread-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads 웹 애플리케이션 [cse364-project]이(가) [BufferPoolPruner-1-thread-1](이)라는 이름의 쓰레드를 시작시킨 것으로 보이지만, 해당 쓰레드를 중지시키지 못했습니다. 이는 메모리 누수를 유발할 가능성이 큽니다. 해당 쓰레드의 스택 트레이스:
+ java.base@17.0.10/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.10/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.10/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.10/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.10/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.10/java.lang.Thread.run(Thread.java:842)
+14-Jun-2024 14:55:35.397 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8080"]을(를) 중지시킵니다.
+14-Jun-2024 14:55:35.409 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8080"]을(를) 소멸시킵니다.
+14-Jun-2024 14:55:48.084 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.24
+14-Jun-2024 14:55:48.087 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  May 9 2024 17:41:23 UTC
+14-Jun-2024 14:55:48.087 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.24.0
+14-Jun-2024 14:55:48.087 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Mac OS X
+14-Jun-2024 14:55:48.087 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     13.6.1
+14-Jun-2024 14:55:48.087 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          aarch64
+14-Jun-2024 14:55:48.087 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+14-Jun-2024 14:55:48.087 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+14-Jun-2024 14:55:48.087 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+14-Jun-2024 14:55:48.087 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     /Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:55:48.087 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     /Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:55:48.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=/Users/ryanb/Documents/github/projects-group3/tomcat/conf/logging.properties
+14-Jun-2024 14:55:48.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+14-Jun-2024 14:55:48.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djdk.tls.ephemeralDHKeySize=2048
+14-Jun-2024 14:55:48.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+14-Jun-2024 14:55:48.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+14-Jun-2024 14:55:48.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+14-Jun-2024 14:55:48.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+14-Jun-2024 14:55:48.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+14-Jun-2024 14:55:48.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+14-Jun-2024 14:55:48.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+14-Jun-2024 14:55:48.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=/Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:55:48.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=/Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:55:48.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=/Users/ryanb/Documents/github/projects-group3/tomcat/temp
+14-Jun-2024 14:55:48.098 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 프로덕션 환경들에서 최적의 성능을 제공하는, APR 기반 Apache Tomcat Native 라이브러리가, 다음 java.library.path에서 발견되지 않습니다: [/Users/ryanb/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+14-Jun-2024 14:55:48.219 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+14-Jun-2024 14:55:48.234 INFO [main] org.apache.catalina.startup.Catalina.load [253] 밀리초 내에 서버가 초기화되었습니다.
+14-Jun-2024 14:55:48.254 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+14-Jun-2024 14:55:48.254 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.24]
+14-Jun-2024 14:55:48.265 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR 웹 애플리케이션 아카이브 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/cse364-project.war]을(를) 배치합니다.
+14-Jun-2024 14:55:49.692 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Jun-2024 14:56:04.122 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR 웹 애플리케이션 아카이브 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/cse364-project.war]의 배치가 [15,857] 밀리초에 완료되었습니다.
+14-Jun-2024 14:56:04.123 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/docs]을(를) 배치합니다.
+14-Jun-2024 14:56:04.133 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/docs]에 대한 배치가 [10] 밀리초에 완료되었습니다.
+14-Jun-2024 14:56:04.133 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/manager]을(를) 배치합니다.
+14-Jun-2024 14:56:04.148 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/manager]에 대한 배치가 [15] 밀리초에 완료되었습니다.
+14-Jun-2024 14:56:04.149 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/examples]을(를) 배치합니다.
+14-Jun-2024 14:56:04.227 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/examples]에 대한 배치가 [79] 밀리초에 완료되었습니다.
+14-Jun-2024 14:56:04.227 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/ROOT]을(를) 배치합니다.
+14-Jun-2024 14:56:04.233 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/ROOT]에 대한 배치가 [6] 밀리초에 완료되었습니다.
+14-Jun-2024 14:56:04.234 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/host-manager]을(를) 배치합니다.
+14-Jun-2024 14:56:04.242 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/host-manager]에 대한 배치가 [8] 밀리초에 완료되었습니다.
+14-Jun-2024 14:56:04.244 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+14-Jun-2024 14:56:04.251 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [16017] 밀리초 내에 시작되었습니다.
+14-Jun-2024 14:58:01.220 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8080"]을(를) 일시 정지 중
+14-Jun-2024 14:58:01.226 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+14-Jun-2024 14:58:01.296 WARNING [Thread-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads 웹 애플리케이션 [cse364-project]이(가) [BufferPoolPruner-1-thread-1](이)라는 이름의 쓰레드를 시작시킨 것으로 보이지만, 해당 쓰레드를 중지시키지 못했습니다. 이는 메모리 누수를 유발할 가능성이 큽니다. 해당 쓰레드의 스택 트레이스:
+ java.base@17.0.10/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.10/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.10/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.10/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.10/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.10/java.lang.Thread.run(Thread.java:842)
+14-Jun-2024 14:58:01.299 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8080"]을(를) 중지시킵니다.
+14-Jun-2024 14:58:01.316 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8080"]을(를) 소멸시킵니다.
+14-Jun-2024 14:58:12.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.24
+14-Jun-2024 14:58:12.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  May 9 2024 17:41:23 UTC
+14-Jun-2024 14:58:12.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.24.0
+14-Jun-2024 14:58:12.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Mac OS X
+14-Jun-2024 14:58:12.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     13.6.1
+14-Jun-2024 14:58:12.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          aarch64
+14-Jun-2024 14:58:12.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+14-Jun-2024 14:58:12.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+14-Jun-2024 14:58:12.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+14-Jun-2024 14:58:12.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     /Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:58:12.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     /Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:58:12.706 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=/Users/ryanb/Documents/github/projects-group3/tomcat/conf/logging.properties
+14-Jun-2024 14:58:12.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+14-Jun-2024 14:58:12.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djdk.tls.ephemeralDHKeySize=2048
+14-Jun-2024 14:58:12.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+14-Jun-2024 14:58:12.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+14-Jun-2024 14:58:12.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+14-Jun-2024 14:58:12.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+14-Jun-2024 14:58:12.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+14-Jun-2024 14:58:12.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+14-Jun-2024 14:58:12.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+14-Jun-2024 14:58:12.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=/Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:58:12.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=/Users/ryanb/Documents/github/projects-group3/tomcat
+14-Jun-2024 14:58:12.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=/Users/ryanb/Documents/github/projects-group3/tomcat/temp
+14-Jun-2024 14:58:12.712 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 프로덕션 환경들에서 최적의 성능을 제공하는, APR 기반 Apache Tomcat Native 라이브러리가, 다음 java.library.path에서 발견되지 않습니다: [/Users/ryanb/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+14-Jun-2024 14:58:12.821 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+14-Jun-2024 14:58:12.836 INFO [main] org.apache.catalina.startup.Catalina.load [218] 밀리초 내에 서버가 초기화되었습니다.
+14-Jun-2024 14:58:12.855 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+14-Jun-2024 14:58:12.855 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.24]
+14-Jun-2024 14:58:12.871 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR 웹 애플리케이션 아카이브 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/cse364-project.war]을(를) 배치합니다.
+14-Jun-2024 14:58:14.182 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Jun-2024 14:58:30.676 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR 웹 애플리케이션 아카이브 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/cse364-project.war]의 배치가 [17,805] 밀리초에 완료되었습니다.
+14-Jun-2024 14:58:30.677 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/docs]을(를) 배치합니다.
+14-Jun-2024 14:58:30.689 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/docs]에 대한 배치가 [12] 밀리초에 완료되었습니다.
+14-Jun-2024 14:58:30.689 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/manager]을(를) 배치합니다.
+14-Jun-2024 14:58:30.706 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/manager]에 대한 배치가 [17] 밀리초에 완료되었습니다.
+14-Jun-2024 14:58:30.706 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/examples]을(를) 배치합니다.
+14-Jun-2024 14:58:30.796 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/examples]에 대한 배치가 [89] 밀리초에 완료되었습니다.
+14-Jun-2024 14:58:30.796 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/ROOT]을(를) 배치합니다.
+14-Jun-2024 14:58:30.803 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/ROOT]에 대한 배치가 [7] 밀리초에 완료되었습니다.
+14-Jun-2024 14:58:30.803 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/host-manager]을(를) 배치합니다.
+14-Jun-2024 14:58:30.812 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/ryanb/Documents/github/projects-group3/tomcat/webapps/host-manager]에 대한 배치가 [9] 밀리초에 완료되었습니다.
+14-Jun-2024 14:58:30.814 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+14-Jun-2024 14:58:30.821 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [17985] 밀리초 내에 시작되었습니다.
+14-Jun-2024 15:01:13.259 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8080"]을(를) 일시 정지 중
+14-Jun-2024 15:01:13.262 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+14-Jun-2024 15:01:13.320 WARNING [Thread-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads 웹 애플리케이션 [cse364-project]이(가) [BufferPoolPruner-1-thread-1](이)라는 이름의 쓰레드를 시작시킨 것으로 보이지만, 해당 쓰레드를 중지시키지 못했습니다. 이는 메모리 누수를 유발할 가능성이 큽니다. 해당 쓰레드의 스택 트레이스:
+ java.base@17.0.10/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.10/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.10/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.10/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.10/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.10/java.lang.Thread.run(Thread.java:842)
+14-Jun-2024 15:01:13.323 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8080"]을(를) 중지시킵니다.
+14-Jun-2024 15:01:13.325 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8080"]을(를) 소멸시킵니다.

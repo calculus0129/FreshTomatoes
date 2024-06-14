@@ -39,6 +39,9 @@
   <user username="admin" password="<must-be-changed>" roles="manager-gui"/>
   <user username="robot" password="<must-be-changed>" roles="manager-script"/>
 -->
+
+  <user username="admin" password="password" roles="manager-gui, manager-script"/>
+
 <!--
   The sample user and role entries below are intended for use with the
   examples web application. They are wrapped in a comment and thus are ignored
