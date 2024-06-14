@@ -1,0 +1,26 @@
+/* styles.css */
+nav a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    background-color: #ED6E46;
+    border-top-color: #50C878;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 5px;
+}
+
+p {
+    color: black;
+    font-size: 20px;
+    background-color: #50C878;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border-top-color: #50C878;
+}
+
+nav a:hover {
+    background-color: #575757;
+    border-radius: 10px;
+}
