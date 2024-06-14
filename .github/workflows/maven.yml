@@ -81,12 +81,12 @@ jobs:
 
     - name: Setup project directory
       run: |
-        sudo mkdir -p /root/project/milestone1
-        sudo cp -r milestone1 /root/project/milestone1
-        sudo cp run-fast.sh /root/project/run-fast.sh
+        mkdir -p /project/milestone1
+        cp -r milestone1 /project/milestone1
+        cp run-fast.sh /project/run-fast.sh
 
     - name: Run script
       run: |
-        sudo cd /root/project
-        sudo sh run-fast.sh
+        cd /project
+        sh run-fast.sh
 
