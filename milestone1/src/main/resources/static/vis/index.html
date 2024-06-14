@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/vis.css">
+    <title>Movie timeline</title>
 </head>
+
 <body>
     <header><a href="../">Go back to Main</a></header>
-
+        
+    <div id="chart">
+        <g id="timeline">
+            <div id="timelinechart"></div>
+            <div class="searchGenre">
+                <button onclick="newTimeline()" class="btn">Search Genre</button>
+                <button onclick="defaultTimeline()" class="initbtn">Initialize</button>
+                <input type="text" placeholder="Search.." id="myGenre" onkeyup="autoGenre()">
+                <div id="myGenreList" class="dropdown-content">
+                </div>
+            </div>
+        </g>
+        <g id="bars">
+            <div id="barchart"></div>
+            <div class="searchTime">
+                <button onclick="newBar()" class="btn">Search Movie</button>
+                <button onclick="defaultBar()" class="initbtn">Initialize</button>
+                <input type="text" placeholder="Search.." id="myTitle" onkeyup="autoTitle()">
+                <div id="myMovieList" class="dropdown-content">
+                </div>
+            </div>
+        </g>
+    </div>
+    <div id="loading">
+        <svg width="1800" height="70">
+            <text 
+              x="10" y="50" 
+              fill="#ED6E46" font-size="45" font-family="'Leckerli One', cursive">
+              It takes 10-20 seconds for intial loading of graphs
+            </text>
+        </svg>
+    </div>
+    <div id="usage">
+        <text>Usage details</text>
+        <ol>
+            <li>First Vis: Timeline of movie genres</li>
+            <ul>
+                <li>You can search genre name in the search box and click the "Search Genre" button to see the graph</li>
+                <li>The first keyword has to be Uppercase, and Please use recommended keywords to get new graphs</li>
+            </ul>
+            <li>Second Vis: List of movies released in the same year</li>
+            <ul>
+                <li>You can search movie title in the search box and click the "Search Movie" button to see the graph</li>
+                <li>The first keyword has to be Uppercase, and Please use recommended keywords to get new graphs</li>
+            </ul>
+            <li>You can click "Initialize" button to initialize each graphs</li>
+        </ol>
+    </div>
+    <script src="js/timeline.js"></script>
+    <script src="js/bar.js"></script>
+    <script src="js/graph.js"></script>
 </body>
-</html>
+
+</html> 

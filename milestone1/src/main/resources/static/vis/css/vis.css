@@ -1,0 +1,65 @@
+/* styles.css */
+header {
+    background-color: #FF5733;
+    border-top-color: #50C878;
+    padding: 10px 0;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+header a:hover {
+    background-color: #575757;
+    border-radius: 10px;
+}
+
+
+#timeline {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#bars {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+}
+#chart {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+}
+
+#myGenre, #myTitle {
+    display: block;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+    display: block;
+    color: black;
+    background-color: #f6f6f6;
+    text-decoration: none;
+    width: 500px
+}
+
+#usage {
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.initbtn {
+    background-color: #50C878;
+    color: black;
+}
+
+.btn {
+    background-color: #FF5733;
+    color: black;
+}
+
+
