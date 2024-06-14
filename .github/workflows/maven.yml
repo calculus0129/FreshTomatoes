@@ -81,5 +81,5 @@ jobs:
 
     - name: Run script
       run: |
-        cd milestone1 && mongod --fork --logpath /var/log/mongod.log && mvn package 
+        cd milestone1 && sudo systemctl start mongod && mvn package 
 
