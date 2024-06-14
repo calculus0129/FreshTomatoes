@@ -23,24 +23,25 @@ cd ..
 
 # Remove previous deployment
 echo "Removing previous deployment..."
-rm -rf $TOMCAT_HOME/webapps/cse364-project*
+# rm -rf $TOMCAT_HOME/webapps/cse364-project*
+rm -rf $TOMCAT_HOME/webapps/ROOT
+
 rm -rf $TOMCAT_HOME/work/Catalina/localhost/*
+
 
 # Copy new WAR file to the Tomcat webapps directory
 echo "Deploying new version..."
-cp $PROJECT_DIR/target/cse364-project.war $TOMCAT_HOME/webapps/
+# cp $PROJECT_DIR/target/cse364-project.war $TOMCAT_HOME/webapps/
 
-DIR=$TOMCAT_HOME/webapps/cse364-project/WEB-INF/classes/data/
+# DIR=$TOMCAT_HOME/webapps/cse364-project/WEB-INF/classes/data/
 
-if [[ -d $DIR ]]; then
-    echo "Removing existing directory: $DIR"
-    mkdir "$DIR"
-fi
+# if [[ -d $DIR ]]; then
+#     echo "Removing existing directory: $DIR"
+#     mkdir "$DIR"
+# fi
 
-cp $PROJECT_DIR/data/* $DIR
-
-# rm -rf $TOMCAT_HOME/webapps/ROOT
-# cp $PROJECT_DIR/target/cse364-project.war $TOMCAT_HOME/webapps/ROOT.war
+# cp $PROJECT_DIR/data/* $DIR
+cp $PROJECT_DIR/target/cse364-project.war $TOMCAT_HOME/webapps/ROOT.war
 
 # Start Tomcat server
 echo "Starting Tomcat..."

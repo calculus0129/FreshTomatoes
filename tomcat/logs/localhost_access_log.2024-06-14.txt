@@ -48,3 +48,9 @@
 0:0:0:0:0:0:0:1 - - [14/Jun/2024:15:00:03 +0900] "GET /recommend/user?gender=F&age=18&occ=1 HTTP/1.1" 404 826
 0:0:0:0:0:0:0:1 - - [14/Jun/2024:15:00:16 +0900] "GET /recommend/user?gender=F&age=18&occ=1 HTTP/1.1" 404 826
 0:0:0:0:0:0:0:1 - - [14/Jun/2024:15:00:57 +0900] "GET /recommend/user?gender=F&age=18&occ=1 HTTP/1.1" 404 826
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:15:04:25 +0900] "GET /cse364-project/rec/index.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:15:04:25 +0900] "GET /cse364-project/rec/app.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:15:04:37 +0900] "GET /recommend/user?gender=F&age=18&occ=1 HTTP/1.1" 200 164235
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:15:05:26 +0900] "GET /rec/index.html HTTP/1.1" 200 2566
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:15:05:26 +0900] "GET /rec/app.js HTTP/1.1" 200 2117
+0:0:0:0:0:0:0:1 - - [14/Jun/2024:15:05:36 +0900] "GET /recommend/user?gender=F&age=18&occ=1 HTTP/1.1" 200 164235
