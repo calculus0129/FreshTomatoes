@@ -24,36 +24,71 @@ These instructions will get you a copy of the project up and running on your loc
 1. Download our repository. ( `git clone https://github.com/cse364-unist/projects-group3.git` )
 2. For running, start up the Docker Desktop.
 
-![The docker desktop - Mac](resources/images/docker-mac.png)
+<img src="resources/images/docker-mac.png" alt="The docker desktop - Mac" width="800"/>
+
+### Main Web Page
+
+<img src="resources/images/main_page.jpeg" alt="Main web page" width="800"/>
+Our main page guides to three features, user can visit each feature's page by clicking the corresponding box.
+
 
 ## Key Features
-### Feature1 : ChatGPT based movie search engine
+### Feature1 : *ChatGPT based movie search engine*
 #### What is it about?
    Having trouble remembering the title of a movie you want to watch? Just enter what you can remember into our web service, and we'll help you find the movie!
 
 #### How can you use it?
-   ![f1_input](resources/images/f1_input.png)
+   <img src="resources/images/f1_input.png" alt="feature1 input" width="800"/>
    Please enter the information about ***plot, genres, stars, and directors*** of the movie you want to find as much as you remember. If you don't remember, just write "I don't remember". The more detailed information you provide, the higher the chances of accurately finding the movie.
 
    After you have written everything down, press the **Submit** button and wait a moment. The results will appear below.
 
 #### What does it do?
-   ![f1_output](resources/images/f1_output.png)
+   <img src="resources/images/f1_output.png" alt="feature1 output" width="800"/>
    It will display information about the movie that is most likely the one you're looking for, including the title, year, parental guide, runtime, IMDb rating, genres, plot, director(s), writer(s), and star(s).
 
    Clicking on the IMDB Link will redirect you to the movie's IMDb page.
 
 #### How does it work?
-   ![f1_pipeline](resources/images/f1_pipeline.png)
+   <img src="resources/images/f1_pipeline.png" alt="feature1 pipeline" width="800"/>
    When you enter plot, genres, stars, and directors into the text box and click the submit button, the ChatController embeds this information into a pre-defined prompt. Then, it sends a request to ChatGPT using the OpenAI API. ChatGPT responds in JSON format. The information is then appropriately displayed on the screen.
 
    > Note that:
    > 1) AI algorithm is not always correct. ChatGPT's responses can sometimes be **inaccurate**, which means it might not always be able to find the movie you want. In that case, try again with more detailed information.
    > 2) There are some **randomness** in ChatGPT's response. ChatGPT doesn't always output the exact same response.
 
-...
+### Feature2: *Movie Timeline Visualization*
+#### 2.1. Function
+This feature supplies 2 visualization about the movie genres and movies in the perspective of time. The first visualization shows the timeline of genre popularities(represented by number of movies) in a form of streamgraph, and the second visualization shows the popularity(represented by number of ratings) comparison of different movies released in the same year. User can search the genre name or movie titles in each visualization tools' search box, and see interactive graphs.
 
-### 3. Recommendation via User Information
+#### 2.2. Usage
+##### Example Images
+<img src="resources/images/vis.jpeg" alt="Before the Loading of the default visualization" width="800"/>
+<img src="resources/images/vis_loaded.jpeg" alt="After the Loading of the default visualization - Default" width="800"/>
+<img src="resources/images/search_vis.jpeg" alt="After the Loading of the default visualization - Search results" width="800"/>
+
+##### Initial Loading
+It takes 10-20 seconds to load the visualization tool at the initial web deployment. After loading, user can access to the visualization tool directly even if they visit other pages for feature1 or 3 and come back again.
+
+##### Movie Genre Timeline
+In the first visualization, at default, it shows overall number of movies in various genres along time. Here, user can put mouse over the streamgraph and check the corresponding genre names.
+And if user want to see the timeline of certain movie genres, user can search for that genre name in the search box.
+Here, user should type the first letter to be capital letter. Then the recommended matching genree names appear, and user can click it and modify their search queries. After finishing the typing of certain movie genre, user should click the "Search Genre" button to see the regarding timeline. And user can come back to the initial timeline by clicking green "Initialize" button.
+The third image at the above (left part) shows the result of searched genre "Documentary".
+
+##### Movies In The Year
+In the second visualization, at default, it shows movie list in bar graph that is sorted according to each movies' number of reviews (released in 1970). 
+And if user want to compare certain movies other movies that released in the same year, user can search for that movie title in the search box.
+Here, user should also type the first letter to be capital letter. Then the recommend matching movie titles appear, and user can click it and modify their search queries. After finishing the typing of certain movie title, user should click the "Search Movie" button to see the regarding comparison (bar graph). And user can come back to the initial bar graph (movies released in 1970) by clicking green "Initialize" button.
+And user can check the information of each bar (representing each movie) by putting the mouse over, about Title, Number of reviews, Genre (3 informations).
+The third image at the aboe (right part) shows the result of searched movie "Lord of the Ring, The (1978)".
+
+   > Note that:
+   > 1) It takes time for loading at first web deployment.
+   > 2) For searching queries, it is limited to the recommended matching keywords when user type each letters in the search box. This data is bounded to our MovieLens database that we utilized for feature1 and 2.
+
+
+### Feature3: *Recommendation via User Information*
 
 #### 3.1. Function
 
@@ -72,7 +107,7 @@ The list of movies with links to the duckduckgo search result pops up, ordered i
  2. Number of reviews: monotonically decreasing
  3. Title of movie: lexicographically
 
-![recommendation example of male, 18-24, K-12 student](resources/images/f3_rec_eg0.png)
+<img src="resources/images/f3_rec_eg0.png" alt="recommendation example of male, 18-24, K-12 student" width="800"/>
 
 #### 3.3. Use Cases
 
@@ -88,12 +123,10 @@ Assume that you have a girlfriend with the following information:
 Then, you can use this website to guess which movie she likes.
 
 You type in the gender, age, and occupation information like this:
-
-![Female, 25-34, executive/managerial](resources/images/f3_rec_ex1.png)
+<img src="resources/images/f3_rec_ex1.png" alt="Female, 25-34, executive/managerial" width="800"/>
 
 then you can see the list of movies recommended like this:
-
-![`about Time`, `Equilibrium`, and `Cute Bear`](resources/images/f3_rec_ex2.png)
+<img src="resources/images/f3_rec_ex2.png" alt="`about Time`, `Equilibrium`, and `Cute Bear`" width="800"/>
 
 With this, you can watch the movies `about Time`, `Equilibrium`, and `Cute Bear` and can make a connection with her later. If she didn’t watch it, you could ask for watching it together! :3
 
@@ -148,6 +181,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).  -->
 
 ## Authors
+* **Chaeeun Moon** - *Manage Feature 2* - [calculus0129](https://github.com/calculus0129)
 
 * **Jaehyun Bhang** - *Manage Feature 3 and the main Java Applications* - [calculus0129](https://github.com/calculus0129)
 
@@ -160,88 +194,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * README.md layout by PurpleBooth (https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-
-
-############################################ (below: from ms2's README.md)
-
-
-## SetUp
-
-### Local Runs
-
-Simply Enter:
-```sh run-fast.sh```
-
-You can alternatively use `sh run.sh` if you want to test the application, too.
-
-Then, you can access the web application with the <a target="_blank" src="localhost:8080">localhost:8080</a>.
-
-### Running in the docker
-
-From the directory where our submitted Dockerfile and run.sh file are in, <br/>
-Build docker image and container
-```
-docker build -t ms1:cn .
-docker run -it --name cn_container ms1:cn
-```
-and inside the docker container, run `sh run.sh`
-
-After all tests are finished(each test includes starting spring application and loading data), <br/>
-and after the spring application starts and all data are uploaded(last log message: User data all uploaded!), <br/>
-open new terminal of the same docker container (`docker exec -it cn_container bash`) <br/>
-and see the implementation result by using below examples: <br/>
-
-## Key Features
-### Feature1 : ChatGPT based movie search engine
-   Finds movie titles via roughly remembered informations(e.g., plot, genre, actor, background music).
-
-   Using ChatGPT API, this feature lets users to find movie titles based on the clues about movies provided by the user.
-
-   The ChatGPT uses a pre-defined output format for the response: `[name_1, name_2, ..., name_n]`.
-   
-   If the response from the ChatGPT matches this format, we refine the response to a more human-readable format: `These are the candidates: movie 1 name: name_1, movie 2 name: name_2, ...`.
-
-   - There's no change from the proposal
-
-   #### GET RestAPI /chat
-   The user provides the plot, genre, actor, and background music(bgm) as query parameters, and the ChatGPT responds with the names of matching movies.
-
-   Example:
-   - `curl "http://localhost:8080/chat?plot=they%20save%20the%20earth&genre=action&actor=Chris%20Evans&bgm=I%20don%27t%20remember"`
-
-   Expected output:
-   - `These are the candidates: movie 1 name: Captain America: The First Avenger, movie 2 name: Avengers: Infinity War, and movie 3 name: Avengers: Endgame`
-
-   > Note that: ChatGPT's actual answers may vary! There are some randomness in ChatGPT's response. ChatGPT doesn't always output the exact same response.
-
-
-### Feature2 : Temporal Visualization of movie genres and movies
-   This feature supplies insightful visualization about the movie genres and movies through time. The first visualization shows the timeline of genre popularities(represented by number of movies) in a form of streamgraph, and the second visualization shows the popularity(represented by number of ratings) comparison of different movies in the certain year. 
-   - The contents of visualization have changed. We firstly expected to describe popularity timeline based on the rating data, but since there was only ratings done in 2000, 2001, 2002, 2003(small range). So we changed the timeline range to year of movie releases.
-   #### Get RestAPI /movieInfo/genres
-   Through this API, user can get auto completed genre name from the partial name. This API is required because user can know which genres can be accessed through our application.
-   - Examples:
-   - `curl http://localhost:8080/movieInfo/genres?s=F`
-   - Output: list of genre name start with "F"
-   - `curl http://localhost:8080/movieInfo/titles?s=Toygenres?s=Documentarya`
-   - Output: empty list
-#### GET RestAPI /movieInfo/titles
-   This API has similar intention with the above RestAPI, through this, user can get auto completed movie title from the partial title.
-   - Examples:
-   - `curl http://localhost:8080/movieInfo/titles?s=Toy%20Sto`
-   - Output: list of movie titles starting with "Toy Sto"
-Below API's are for exporting csv that is matched with the user's request.
-#### GET RestAPI /movieInfo/csv/timeline
-   This API export csv that has number of movies along time for each genre.
-   - `curl http://localhost:8080/movieInfo/csv/timeline`
-#### GET RestAPI /movieInfo/csv/timeline/one
-   This API export csv that has number of movies along time for one requested genre.
-   - `curl http://localhost:8080/movieInfo/csv/timeline/one?g=Sci-Fi`
-   - `curl http://localhost:8080/movieInfo/csv/timeline/one?g=Action`
-#### GET RestAPI /movieInfo/csv/year
-   This API export csv that has movies that are released in the same year, sorted by number of ratings done for each of them
-   - Examples:
-   - export csv for movie list sorted with increasing rating numbers released in the requested year (e.g. 1970)
-   - `curl -X GET http://localhost:8080/movieInfo/csv/year?y=1970`
-   - export csv for movie list sorted with increasing rating numbers released in the same year with the requested movie (e.g. Toy Story (1995))
-   - `curl -X GET http://localhost:8080/movieInfo/csv/year?t="Toy%20Story%20(1995)"`
