@@ -57,6 +57,38 @@ Our main page guides to three features, user can visit each feature's page by cl
    > 1) AI algorithm is not always correct. ChatGPT's responses can sometimes be **inaccurate**, which means it might not always be able to find the movie you want. In that case, try again with more detailed information.
    > 2) There are some **randomness** in ChatGPT's response. ChatGPT doesn't always output the exact same response.
 
+#### Guiding examples
+For example, you may try to input the following:
+##### example 1
+**Plot:** They save the Earth  
+**Genres:** Action  
+**Stars:** Chris Evans  
+**Directors:** Anthony Russo
+
+##### example 2
+**Plot:** Red guy kill many people  
+**Genres:** Action, Comic  
+**Stars:** Ryan Reynolds  
+**Directors:** I don't remember
+
+##### example 3
+**Plot:** The ship sinks into the sea  
+**Genres:** Drama, Romance  
+**Stars:** Leonardo Dicaprio  
+**Directors:** James Cameron
+
+#### GET RestAPI /chat
+The user provides the plot, genres, stars, and directors as query parameters, and the ChatGPT responds with the information about the movie including the title, year, parental guide, runtime and so on in JSON format.
+
+Example:
+- `curl "http://localhost:8080/chat?plot=The%20ship%20sinks%20to%20the%20ocean&genres=Drama,%20Romance&stars=Leonardo%20Dicap
+rio&directors=James%20Cameron"`
+
+Expected output:
+- `{"title": "Titanic", "imdb_link": "https://www.imdb.com/title/tt0120338/", "year": 1997, "parental_guide": "PG-13", "runtime": "195 min", "imdb_rating": 7.9, "genres": ["Drama", "Romance"], "plot": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.", "director": ["James Cameron"], "writers": ["James Cameron"], "stars": ["Leonardo DiCaprio", "Kate Winslet", "Billy Zane"]}`
+
+
+
 ### Feature2: *Movie Timeline Visualization*
 #### 2.1. Function
 This feature supplies 2 visualization about the movie genres and movies in the perspective of time. The first visualization shows the timeline of genre popularities(represented by number of movies) in a form of streamgraph, and the second visualization shows the popularity(represented by number of ratings) comparison of different movies released in the same year. User can search the genre name or movie titles in each visualization tools' search box, and see interactive graphs.
