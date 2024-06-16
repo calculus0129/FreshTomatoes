@@ -1,8 +1,8 @@
-<img src="resources/images/FreshTomato.png" alt="Tomato Logo!" width="200" height="200"/>
+<img src="resources/images/FreshTomato.png" alt="Tomato Logo!" width="100" height="100"/>
 
 # FreshTomatoes
 
-<img src="resources/images/project-intro.png" alt="FreshTomato Intro" width="600"/>
+<img src="resources/images/project-intro.png" alt="FreshTomato Intro" width="200"/>
 
 <!-- ![FreshTomato Intro](resources/images/project-intro.png) {width=600} -->
 
