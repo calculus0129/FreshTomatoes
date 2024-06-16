@@ -198,10 +198,6 @@ To be specific, the INPUT and OUTPUT are as follows:
 - `curl "http://localhost:8080/recommend/user?gender=F&age=18&occ=21`
  - Output: BAD_REQUEST response (invalid occupation)
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Built With
 
 <!-- * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used -->
