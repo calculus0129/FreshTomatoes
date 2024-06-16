@@ -27,22 +27,29 @@ These instructions will get you a copy of the project up and running on your loc
 ![The docker desktop - Mac](resources/images/docker-mac.png)
 
 ## Key Features
+### Feature1 : ChatGPT based movie search engine
+#### What is it about?
+   Having trouble remembering the title of a movie you want to watch? Just enter what you can remember into our web service, and we'll help you find the movie!
 
-### 1. ChatGPT based movie search engine
+#### How can you use it?
+   ![f1_input](resources/images/f1_input.png)
+   Please enter the information about ***plot, genres, stars, and directors*** of the movie you want to find as much as you remember. If you don't remember, just write "I don't remember". The more detailed information you provide, the higher the chances of accurately finding the movie.
 
-#### 1.1. Function
+   After you have written everything down, press the **Submit** button and wait a moment. The results will appear below.
 
-(what does it do?)
+#### What does it do?
+   ![f1_output](resources/images/f1_output.png)
+   It will display information about the movie that is most likely the one you're looking for, including the title, year, parental guide, runtime, IMDb rating, genres, plot, director(s), writer(s), and star(s).
 
-#### 1.2. Usage
+   Clicking on the IMDB Link will redirect you to the movie's IMDb page.
 
-(how to use it? - input (including urls... - which one?)+output+examples of the frontend!)
+#### How does it work?
+   ![f1_pipeline](resources/images/f1_pipeline.png)
+   When you enter plot, genres, stars, and directors into the text box and click the submit button, the ChatController embeds this information into a pre-defined prompt. Then, it sends a request to ChatGPT using the OpenAI API. ChatGPT responds in JSON format. The information is then appropriately displayed on the screen.
 
-#### 1.3. REST APIs
-
-(기존 ms2의 input, output, example curl commands 등)
-
-### 2. (Feature 2 제목)
+   > Note that:
+   > 1) AI algorithm is not always correct. ChatGPT's responses can sometimes be inaccurate, which means it might not always be able to find the movie you want. In that case, try again with more detailed information.
+   > 2) There are some randomness in ChatGPT's response. ChatGPT doesn't always output the exact same response.
 
 ...
 
