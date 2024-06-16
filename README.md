@@ -1,8 +1,8 @@
-![Tomato Logo!](resources/images/FreshTomato.png)
+![Tomato Logo!](resources/images/FreshTomato.png) {width=200 height=200}
 
 # FreshTomatoes
 
-![FreshTomato Intro](resources/images/project-intro.png)
+![FreshTomato Intro](resources/images/project-intro.png) {width=600}
 
 We present you... **FreshTomatoes**!
 
