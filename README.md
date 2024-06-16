@@ -2,7 +2,7 @@
 
 # FreshTomatoes
 
-<img src="resources/images/project-intro.png" alt="FreshTomato Intro" width="200"/>
+<img src="resources/images/project-intro.png" alt="FreshTomato Intro" width="400"/>
 
 <!-- ![FreshTomato Intro](resources/images/project-intro.png) {width=600} -->
 
