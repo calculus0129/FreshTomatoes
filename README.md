@@ -59,7 +59,7 @@ Basically, given website user information, it recommends movies based on the rat
 #### 3.2. Usage
 
 ##### 3.2.1. Input
-1. Access http://localhost:8080/rec/
+1. Access http://localhost:8080/rec
 2. Input the gender, age, and occupation of a person.
 
 ##### 3.2.2. Output
