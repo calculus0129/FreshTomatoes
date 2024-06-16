@@ -50,9 +50,81 @@ End with an example of getting some data out of the system or using it for a lit
 
 ...
 
-### 3. (Feature 3 제목)
+### 3. Recommendation via User Information
 
-...
+#### 3.1. Function
+
+Basically, given website user information, it recommends movies based on the ratings of similar people.
+
+#### 3.2. Usage
+
+##### 3.2.1. Input
+1. Access http://localhost:8080/rec/
+2. Input the gender, age, and occupation of a person.
+
+##### 3.2.2. Output
+The list of movies with links to the duckduckgo search result pops up, ordered in the way that the prior ones are recommended. Specifically,
+
+ 1. Average rating (based on the ratings made by the specific type of user): monotonically decreasing
+ 2. Number of reviews: monotonically decreasing
+ 3. Title of movie: lexicographically
+
+![recommendation example of male, 18-24, K-12 student](resources/images/f3_rec_eg0.png)
+
+#### 3.3. Use Cases
+
+- Imagine that you have a girlfriend or a boyfriend (in the future). You can type in the gender, age, and occupation of your lover and watch movies that they likely to have watched and enjoyed. Therefore, you can make a connection with the person via movies.
+
+##### Example Design Demonstration
+
+Assume that you have a girlfriend with the following information:
+
+	Yuri.
+	Female, 26, Founder of tomato.org
+
+Then, you can use this website to guess which movie she likes.
+
+You type in the gender, age, and occupation information like this:
+
+![Female, 25-34, executive/managerial](resources/images/f3_rec_ex1.png)
+
+then you can see the list of movies recommended like this:
+
+![`about Time`, `Equilibrium`, and `Cute Bear`](resources/images/f3_rec_ex2.png)
+
+With this, you can watch the movies `about Time`, `Equilibrium`, and `Cute Bear` and can make a connection with her later. If she didn’t watch it, you could ask for watching it together! :3
+
+#### 3.4. REST APIs
+
+For this feature, there is only one REST API: recByUser.
+
+```java
+@GetMapping(value = "user", params = {"gender", "age", "occ"})
+public ResponseEntity<?> recByUser(
+      @RequestParam("gender") String gender,
+      @RequestParam(value = "age", required = true) Long age,
+      @RequestParam("occ") Long occ)
+```
+
+Given user information, this method gives the user a list of movies sorted in a way that the prior movie is more recommended.
+
+To be specific, the INPUT and OUTPUT are as follows:
+
+- INPUT: information of the user (age, gender, and occupation).
+- OUTPUT: List of the movies rated by the users with the same attributes, sorted in such order:
+
+(Consider the previous criteria superior to the following criteria)
+
+#### 3.5. Example curl commands
+
+- `curl "http://localhost:8080/recommend/user?gender=F&age=18&occ=20"`
+ - Output: 1483 of movie data sorted.
+- `curl "http://localhost:8080/recommend/user?gender=M&age=18&occ=13"`
+ - Output: []. That's because there are no such user rating information.
+- `curl "http://localhost:8080/recommend/user?gender=a&age=18&occ=20"`
+ - Output: BAD_REQUEST response (invalid gender)
+- `curl "http://localhost:8080/recommend/user?gender=F&age=18&occ=21`
+ - Output: BAD_REQUEST response (invalid occupation)
 
 ## Deployment
 
@@ -64,29 +136,29 @@ Add additional notes about how to deploy this on a live system
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-## Contributing
+<!-- ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).  -->
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Jaehyun Bhang** - *Manage Feature 3 and the main Java Applications* - [calculus0129](https://github.com/calculus0129)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-## License
+<!-- ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details -->
 
-## Acknowledgments
+<!-- ## Acknowledgments
 
 * Hat tip to anyone whose code was used
 * Inspiration
-* etc
+* etc -->
 
 
 ############################################ (below: from ms2's README.md)
@@ -172,53 +244,3 @@ Below API's are for exporting csv that is matched with the user's request.
    - `curl -X GET http://localhost:8080/movieInfo/csv/year?y=1970`
    - export csv for movie list sorted with increasing rating numbers released in the same year with the requested movie (e.g. Toy Story (1995))
    - `curl -X GET http://localhost:8080/movieInfo/csv/year?t="Toy%20Story%20(1995)"`
-
-### Feature3 : Recommendation via User Information
-
-#### What does it do?
-
-Basically, given website user information, it recommends movies based on the ratings of the similar people.
-
-#### Changes from the proposal
-
-Feature is not changed. But the implementation slightly deviated from the concrete project plan;
-
-1. We did not implement the user login system. We could simply get the user information from the HTTP queries.
-2. We did not output a given maximum number of recommended movies, e.g. top 5 movies. Instead, we output the whole possible movie data, sorted so that each previous movie is more recommended than its each next movie.
-
-#### REST APIs
-
-For this feature, there is only one REST API: recByUser.
-
-```java
-@GetMapping(value = "user", params = {"gender", "age", "occ"})
-public ResponseEntity<?> recByUser(
-      @RequestParam("gender") String gender,
-      @RequestParam(value = "age", required = true) Long age,
-      @RequestParam("occ") Long occ)
-```
-
-Given user information, this method gives the user a list of movies sorted in a way that the prior movie is more recommended.
-
-To be specific, the INPUT and OUTPUT are as follows:
-
-- INPUT: information of the user (age, gender, and occupation).
-- OUTPUT: List of the movies rated by the users with the same attributes, sorted in such order:
-
-(Consider the previous criteria superior to the following criteria)
-
-1. Average rating (based on the ratings made by the specific type of user): monotonically decreasing
-2. Number of reviews: monotonically decreasing
-3. Title of movie: lexicographically
-
-#### Example curl commands
-
-- `curl "http://localhost:8080/recommend/user?gender=F&age=18&occ=20"`
- - Output: 1483 of movie data sorted.
-- `curl "http://localhost:8080/recommend/user?gender=M&age=18&occ=13"`
- - Output: []. That's because there are no such user rating information.
-- `curl "http://localhost:8080/recommend/user?gender=a&age=18&occ=20"`
- - Output: BAD_REQUEST response (invalid gender)
-- `curl "http://localhost:8080/recommend/user?gender=F&age=18&occ=21`
- - Output: BAD_REQUEST response (invalid occupation)
-
