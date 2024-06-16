@@ -1,4 +1,12 @@
+![Tomato Logo!](resources/images/FreshTomato.png)
+
 # FreshTomatoes
+
+![FreshTomato Intro](resources/images/project-intro.png)
+
+We present you... **FreshTomatoes**!
+
+A web application with movie services
 
 ## Getting Started
 
@@ -6,29 +14,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+- Git (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- Docker Desktop (https://www.docker.com/products/docker-desktop/)
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+1. Download our repository. ( `git clone https://github.com/cse364-unist/projects-group3.git` )
+2. For running, start up the Docker Desktop.
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+![The docker desktop - Mac](resources/images/docker-mac.png)
 
 ## Key Features
 
@@ -75,7 +69,7 @@ The list of movies with links to the duckduckgo search result pops up, ordered i
 
 - Imagine that you have a girlfriend or a boyfriend (in the future). You can type in the gender, age, and occupation of your lover and watch movies that they likely to have watched and enjoyed. Therefore, you can make a connection with the person via movies.
 
-##### Example Design Demonstration
+##### 3.3.1. Example Usage Demonstration
 
 Assume that you have a girlfriend with the following information:
 
@@ -132,9 +126,9 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+<!-- * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used -->
 * [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+<!-- * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds -->
 
 <!-- ## Contributing
 
@@ -148,17 +142,15 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **Jaehyun Bhang** - *Manage Feature 3 and the main Java Applications* - [calculus0129](https://github.com/calculus0129)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+<!-- See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project. -->
 
 <!-- ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details -->
 
-<!-- ## Acknowledgments
+## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc -->
+* README.md layout by PurpleBooth (https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
 
 
 ############################################ (below: from ms2's README.md)
