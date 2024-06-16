@@ -48,8 +48,8 @@ These instructions will get you a copy of the project up and running on your loc
    When you enter plot, genres, stars, and directors into the text box and click the submit button, the ChatController embeds this information into a pre-defined prompt. Then, it sends a request to ChatGPT using the OpenAI API. ChatGPT responds in JSON format. The information is then appropriately displayed on the screen.
 
    > Note that:
-   > 1) AI algorithm is not always correct. ChatGPT's responses can sometimes be inaccurate, which means it might not always be able to find the movie you want. In that case, try again with more detailed information.
-   > 2) There are some randomness in ChatGPT's response. ChatGPT doesn't always output the exact same response.
+   > 1) AI algorithm is not always correct. ChatGPT's responses can sometimes be **inaccurate**, which means it might not always be able to find the movie you want. In that case, try again with more detailed information.
+   > 2) There are some **randomness** in ChatGPT's response. ChatGPT doesn't always output the exact same response.
 
 ...
 
