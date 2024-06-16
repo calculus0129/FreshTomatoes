@@ -1,5 +1,29 @@
 # FreshTomatoes
 
+## Key Features
+
+### 1. ChatGPT based movie search engine
+
+#### Function
+
+(what does it do?)
+
+#### Usage
+
+(how to use it? - input (including urls... - which one?)+output+examples of the frontend!)
+
+#### REST APIs
+
+(기존 ms2의 input, output, example curl commands 등)
+
+### 2. (Feature 2 제목)
+
+...
+
+### 3. (Feature 3 제목)
+
+...
+
 ## SetUp
 
 ### Local Runs
@@ -25,6 +49,11 @@ After all tests are finished(each test includes starting spring application and 
 and after the spring application starts and all data are uploaded(last log message: User data all uploaded!), <br/>
 open new terminal of the same docker container (`docker exec -it cn_container bash`) <br/>
 and see the implementation result by using below examples: <br/>
+
+
+
+############################################ (below: from ms2's README.md)
+
 
 ## Key Features
 ### Feature1 : ChatGPT based movie search engine
