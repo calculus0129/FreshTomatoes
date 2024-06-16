@@ -214,9 +214,13 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).  -->
 
 ## Authors
-* **Chaeeun Moon** - *Manage Feature 2* 
+* **Chaeeun Moon** - *Manage Feature 2* - [getitmoon](https://github.com/getitmoon)
 
 * **Jaehyun Bhang** - *Manage Feature 3 and the main Java Applications* - [calculus0129](https://github.com/calculus0129)
+
+* **Kyeonghwan Gwak** - *Manage Feature 1* - [khgwak](https://github.com/khgwak)
+
+* **Yewan Na** - *Manage Feature 1* - [nyw0102](https://github.com/nyw0102)
 
 <!-- See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project. -->
 
