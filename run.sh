@@ -2,6 +2,7 @@
 
 cd milestone1
 mongod --fork --logpath /var/log/mongod.log # Background에서 돌리는 거
+sudo systemctl start mongod
 # Wait for MongoDB to be fully ready. netcat must be installed.
 # while ! nc -z localhost 27017; do   
 #   sleep 0.1
