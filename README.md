@@ -116,9 +116,12 @@ Here, user should also type the first letter to be capital letter. Then the reco
 And user can check the information of each bar (representing each movie) by putting the mouse over, about Title, Number of reviews, Genre (3 informations).
 The third image at the aboe (right part) shows the result of searched movie "Lord of the Ring, The (1978)".
 
+
    > Note that:
    > 1) It takes time for loading at first web deployment.
    > 2) For searching queries, it is limited to the recommended matching keywords when user type each letters in the search box. This data is bounded to our MovieLens database that we utilized for feature1 and 2.
+   > 3) We recommend the user to use full screen for this feature for the correct showing of tooltips, tooltips might show in ackward location if not in full screen. (as shown in the example image)
+   > 4) We have observed that sometimes the default graph of the Movie Genre Timeline is shown different from the expected. However, after finding some queries and clicking initialize button, it shows the expected default version of streamgraph.
 
 
 ### Feature3: *Recommendation via User Information*
