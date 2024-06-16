@@ -39,6 +39,7 @@ Our main page guides to three features, user can visit each feature's page by cl
 
 #### How can you use it?
    <img src="resources/images/f1_input.png" alt="feature1 input" width="800"/>
+   
    Please enter the information about ***plot, genres, stars, and directors*** of the movie you want to find as much as you remember. If you don't remember, just write "I don't remember". The more detailed information you provide, the higher the chances of accurately finding the movie.
 
    After you have written everything down, press the **Submit** button and wait a moment. The results will appear below.
