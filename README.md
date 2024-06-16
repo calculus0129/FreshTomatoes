@@ -34,15 +34,15 @@ End with an example of getting some data out of the system or using it for a lit
 
 ### 1. ChatGPT based movie search engine
 
-#### Function
+#### 1.1. Function
 
 (what does it do?)
 
-#### Usage
+#### 1.2. Usage
 
 (how to use it? - input (including urls... - which one?)+output+examples of the frontend!)
 
-#### REST APIs
+#### 1.3. REST APIs
 
 (기존 ms2의 input, output, example curl commands 등)
 
